@@ -1,13 +1,21 @@
 {
-  "name": "awesomeui",
+  "name": "awesome-ui",
+  "description": "Awesome Movie Database (AMDB) - React component library using Tailwind CSS",
+  "author": "Alan Cleyton <alancleyton67@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alancleyton/awesome-ui"
+  },
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "engines": {
+    "node": ">=18",
+    "npm": ">=9"
+  },
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
     "react": "^18.2.0",
