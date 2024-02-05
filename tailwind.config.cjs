@@ -5,13 +5,9 @@ const nesting = require('@tailwindcss/nesting')(require('postcss-nesting'));
 const autoprefixer = require('autoprefixer');
 
 export default {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {},
   },
   plugins: [tailwindcss, nesting, autoprefixer],
-
-}
-
+};
