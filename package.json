@@ -2,6 +2,10 @@
   "name": "awesome-ui",
   "description": "Awesome Movie Database (AMDB) - React component library using Tailwind CSS",
   "author": "Alan Cleyton <alancleyton67@gmail.com>",
+  "main": "dist/cjs/index.ts",
+  "module": "dist/esm/index.ts",
+  "files": ["dist", "package.json", "README.md"],
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/alancleyton/awesome-ui"
@@ -14,7 +18,8 @@
     "npm": ">=9"
   },
   "scripts": {
-    "build": "tsc && vite build",
+    "prebuild": "rm -rf dist",
+    "build": "npm run prebuild && rollup -c",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
     "storybook": "storybook dev -p 6006",
@@ -31,6 +36,10 @@
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@storybook/addon-essentials": "^7.6.12",
     "@storybook/addon-interactions": "^7.6.12",
     "@storybook/addon-links": "^7.6.12",
@@ -63,6 +72,10 @@
     "lint-staged": "^15.2.2",
     "postcss": "^8.4.33",
     "prettier": "^3.2.5",
+    "rollup": "^4.10.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "storybook": "^7.6.12",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
