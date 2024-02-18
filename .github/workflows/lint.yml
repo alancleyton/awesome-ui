@@ -12,7 +12,7 @@ jobs:
     env:
       CI: true
     steps:
-      - name: Cloning repository
+      - name: Clone repository
         uses: actions/checkout@v4
 
       - name: Setup NodeJS (using .node-version)
@@ -23,5 +23,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Running linter
+      - name: Run linter
         run: npm run lint
