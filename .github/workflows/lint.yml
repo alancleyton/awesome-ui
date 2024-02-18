@@ -12,8 +12,8 @@ jobs:
     env:
       CI: true
     steps:
-        name: Cloning repository
-      - uses: actions/checkout@v4
+      - name: Cloning repository
+        uses: actions/checkout@v4
 
       - name: Setup NodeJS (using .node-version)
         uses: actions/setup-node@v4
