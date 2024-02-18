@@ -1,4 +1,4 @@
-name: Test
+name: test
 
 on:
   push:
@@ -12,8 +12,8 @@ jobs:
     env:
       CI: true
     steps:
-        name: Cloning repository
-      - uses: actions/checkout@v4
+      - name: Clone repository
+        uses: actions/checkout@v4
 
       - name: Setup NodeJS (using .node-version)
         uses: actions/setup-node@v4
@@ -23,5 +23,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Running tests
+      - name: Run tests
         run: npm run test:ci
