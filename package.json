@@ -1,10 +1,14 @@
 {
-  "name": "awesome-ui",
+  "name": "@acads/awesome-ui",
   "description": "Awesome Movie Database (AMDB) - React component library using Tailwind CSS",
   "author": "Alan Cleyton <alancleyton67@gmail.com>",
   "main": "dist/cjs/index.ts",
   "module": "dist/esm/index.ts",
-  "files": ["dist", "package.json", "README.md"],
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
@@ -26,6 +30,7 @@
     "build-storybook": "storybook build",
     "test": "vitest",
     "test:staged": "vitest --run --passWithNoTests",
+    "test:ci": "vitest --run",
     "prepare": "husky"
   },
   "dependencies": {
@@ -74,6 +79,7 @@
     "prettier": "^3.2.5",
     "rollup": "^4.10.0",
     "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-import-css": "^3.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "storybook": "^7.6.12",

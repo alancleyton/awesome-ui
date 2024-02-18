@@ -4,9 +4,11 @@ import typescript from '@rollup/plugin-typescript';
 import terser from '@rollup/plugin-terser';
 import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
+import css from 'rollup-plugin-import-css';
 import dts from 'rollup-plugin-dts';
 
-import pkg from './package.json' assert { type: 'json' };
+import * as fs from 'fs';
+const pkg = JSON.parse(fs.readFileSync('./package.json'));
 
 export default [
   {
@@ -27,10 +29,11 @@ export default [
     plugins: [
       resolve(),
       commonjs(),
-      typescript({ tsconfig: './tsconfig.json' }),
+      typescript({ tsconfig: './tsconfig.prod.json' }),
       terser(),
       external(),
-      postcss(),
+      postcss({ modules: true, extract: true }),
+      css(),
     ],
   },
   {
