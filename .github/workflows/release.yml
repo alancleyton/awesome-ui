@@ -31,6 +31,9 @@ jobs:
       - name: Install dependencies
         run: npm install && npm run build
 
+      - name: Setup npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+
       - name: Create changelog
         id: changelog
         uses: TriPSs/conventional-changelog-action@v5
@@ -39,6 +42,15 @@ jobs:
           output-file: 'CHANGELOG.md'
           create-summary: true
           skip-ci: false
+
+      - name: Publish on NPM
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: npm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Create release
         uses: actions/create-release@v1
@@ -49,21 +61,3 @@ jobs:
           tag_name: ${{ steps.changelog.outputs.tag }}
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
-
-      - name: Create .npmrc
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-      - name: Debug NPM_TOKEN
-        run: echo "NPM_TOKEN = $NPM_TOKEN, GITHUB_TOKEN=$GITHUB_TOKEN"
-      - name: View .npmrc
-        run: cat ~/.npmrc
-      - name: Debug Tokens
-        run: echo "NPM_TOKEN = $NPM_TOKEN, GITHUB_TOKEN = $GITHUB_TOKEN"
-
-      - name: Publish on NPM
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          publish: npm run release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
