@@ -32,9 +32,8 @@
     "test:staged": "vitest --run --passWithNoTests",
     "test:ci": "vitest --run",
     "prepare": "husky",
-    "changeset": "changeset",
-    "changeset:version": "changeset version -r",
-    "changeset:publish": "changeset publish"
+    "version": "changeset version",
+    "release": "changeset publish"
   },
   "dependencies": {
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
