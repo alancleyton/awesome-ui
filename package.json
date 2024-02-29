@@ -33,7 +33,7 @@
     "test:ci": "vitest --run",
     "prepare": "husky",
     "version": "changeset version",
-    "release": "changeset publish"
+    "release": "changeset publish --access public"
   },
   "dependencies": {
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
