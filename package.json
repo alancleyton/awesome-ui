@@ -1,5 +1,5 @@
 {
-  "name": "@acads/awesome-ui",
+  "name": "@alancleyton67/awesome-ui",
   "description": "Awesome Movie Database (AMDB) - React component library using Tailwind CSS",
   "author": "Alan Cleyton <alancleyton67@gmail.com>",
   "main": "dist/cjs/index.ts",
@@ -12,9 +12,9 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alancleyton/awesome-ui"
+    "url": "git+https://github.com/alancleyton/awesome-ui.git"
   },
-  "private": true,
+  "private": false,
   "version": "0.0.2",
   "type": "module",
   "engines": {
@@ -93,5 +93,13 @@
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "vitest": "^1.2.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/alancleyton/awesome-ui/issues"
+  },
+  "homepage": "https://github.com/alancleyton/awesome-ui#readme",
+  "directories": {
+    "test": "tests"
+  },
+  "license": "ISC"
 }
