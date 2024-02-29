@@ -1,4 +1,4 @@
-name: lint
+name: Main workflow
 
 on:
   push:
@@ -6,16 +6,20 @@ on:
   pull_request:
     branches: [main]
 
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
 jobs:
-  lint:
+  main:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     env:
       CI: true
+
     steps:
-      - name: Clone repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup NodeJS (using .node-version)
+      - name: Setup NodeJS
         uses: actions/setup-node@v4
         with:
           node-version-file: '.node-version'
@@ -23,5 +27,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Run tests
+        run: npm run test:ci
+
       - name: Run linter
         run: npm run lint
+
+      - name: Run build
+        run: npm run build

@@ -32,7 +32,6 @@
     "test:staged": "vitest --run --passWithNoTests",
     "test:ci": "vitest --run",
     "prepare": "husky",
-    "version": "changeset version",
     "release": "changeset publish --access public"
   },
   "dependencies": {

@@ -1,4 +1,4 @@
-name: release
+name: Release workflow
 
 on:
   push:
@@ -13,12 +13,13 @@ jobs:
       contents: write
       issues: write
       pull-requests: write
-    timeout-minutes: 20
+    timeout-minutes: 15
     runs-on: ubuntu-latest
     env:
       CI: true
+
     steps:
-      - name: Clone repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup NodeJS
@@ -29,14 +30,16 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Conventional Changelog Action
+      - name: Create changelog
         id: changelog
         uses: TriPSs/conventional-changelog-action@v5
         with:
           github-token: ${{ secrets.github_token }}
           output-file: 'CHANGELOG.md'
+          create-summary: true
+          skip-ci: false
 
-      - name: Create GH Release
+      - name: Create release
         uses: actions/create-release@v1
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
         env:
@@ -46,14 +49,11 @@ jobs:
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
 
-      - name: Create Release PR or Publish to npm
+      - name: Publish to NPM
         id: changesets
         uses: changesets/action@v1
         with:
           publish: npm run release
-          version: npm run version
-          commit: "chore(release): new release"
-          title: "chore: new release"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
