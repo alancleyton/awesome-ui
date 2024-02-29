@@ -1,4 +1,13 @@
-# 0.1.0 (2024-02-29)
+## [0.1.1](https://github.com/alancleyton/awesome-ui/compare/v0.1.0...v0.1.1) (2024-02-29)
+
+
+### Bug Fixes
+
+* **ci:** adjsut ci workflow actions ([4c4c200](https://github.com/alancleyton/awesome-ui/commit/4c4c2004e429bdafe02dce9900409cfb656b0745))
+
+
+
+# [0.1.0](https://github.com/alancleyton/awesome-ui/compare/2d5c6e6d66645412f2a8655366faa2ce6794a236...v0.1.0) (2024-02-29)
 
 
 ### Bug Fixes
