@@ -1,3 +1,12 @@
+## [0.1.2](https://github.com/alancleyton/awesome-ui/compare/v0.1.1...v0.1.2) (2024-02-29)
+
+
+### Bug Fixes
+
+* **ci:** adjust release workflow registry url ([ebebdac](https://github.com/alancleyton/awesome-ui/commit/ebebdac71169be5acd2f4c1523dabd7d13d5a716))
+
+
+
 ## [0.1.1](https://github.com/alancleyton/awesome-ui/compare/v0.1.0...v0.1.1) (2024-02-29)
 
 
