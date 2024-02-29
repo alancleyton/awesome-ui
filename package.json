@@ -15,7 +15,7 @@
     "url": "git+https://github.com/alancleyton/awesome-ui.git"
   },
   "private": false,
-  "version": "0.0.2",
+  "version": "0.1.0",
   "type": "module",
   "engines": {
     "node": ">=18",
