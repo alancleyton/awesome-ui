@@ -1,3 +1,12 @@
+## [0.1.3](https://github.com/alancleyton/awesome-ui/compare/v0.1.2...v0.1.3) (2024-02-29)
+
+
+### Bug Fixes
+
+* **ci:** adjust ci release workflow ([78b1a29](https://github.com/alancleyton/awesome-ui/commit/78b1a29e87a8c9015d032fd9d2bc24abbbf422f8))
+
+
+
 ## [0.1.2](https://github.com/alancleyton/awesome-ui/compare/v0.1.1...v0.1.2) (2024-02-29)
 
 
