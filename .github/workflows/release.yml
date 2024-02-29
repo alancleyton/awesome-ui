@@ -29,12 +29,30 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Create Release Pull Request or Publish to npm
+      - name: Conventional Changelog Action
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v5
+        with:
+          github-token: ${{ secrets.github_token }}
+          output-file: 'CHANGELOG.md'
+
+      - name: Create GH Release
+        uses: actions/create-release@v1
+        if: ${{ steps.changelog.outputs.skipped == 'false' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.github_token }}
+        with:
+          tag_name: ${{ steps.changelog.outputs.tag }}
+          release_name: ${{ steps.changelog.outputs.tag }}
+          body: ${{ steps.changelog.outputs.clean_changelog }}
+
+      - name: Create Release PR or Publish to npm
+        id: changesets
         uses: changesets/action@v1
         with:
           publish: npm run release
           version: npm run version
-          commit: "chore: new release"
+          commit: "chore(release): new release"
           title: "chore: new release"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
