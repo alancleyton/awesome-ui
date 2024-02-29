@@ -29,7 +29,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies
-        run: npm install
+        run: npm install && npm run build
 
       - name: Create changelog
         id: changelog
@@ -59,7 +59,7 @@ jobs:
       - name: Debug Tokens
         run: echo "NPM_TOKEN = $NPM_TOKEN, GITHUB_TOKEN = $GITHUB_TOKEN"
 
-      - name: Publish to NPM
+      - name: Publish on NPM
         id: changesets
         uses: changesets/action@v1
         with:
