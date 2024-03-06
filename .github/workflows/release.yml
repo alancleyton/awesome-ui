@@ -34,6 +34,16 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # create release CHANGELOG file
+      - name: Create changelog
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v5
+        with:
+          github-token: ${{ secrets.github_token }}
+          output-file: 'CHANGELOG.md'
+          create-summary: true
+          skip-ci: false
+
       # create release tags
       - name: Create release
         uses: actions/create-release@v1
@@ -44,13 +54,3 @@ jobs:
           tag_name: ${{ steps.changelog.outputs.tag }}
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
-
-      # create release CHANGELOG file
-      - name: Create changelog
-        id: changelog
-        uses: TriPSs/conventional-changelog-action@v5
-        with:
-          github-token: ${{ secrets.github_token }}
-          output-file: 'CHANGELOG.md'
-          create-summary: true
-          skip-ci: false
