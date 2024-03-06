@@ -1,3 +1,12 @@
+## [0.1.9](https://github.com/alancleyton/awesome-ui/compare/v0.1.8...v0.1.9) (2024-03-06)
+
+
+### Bug Fixes
+
+* adjust package version ([7c1377a](https://github.com/alancleyton/awesome-ui/commit/7c1377a9aab3a40598712d4f2bd015314d043c5b))
+
+
+
 ## [0.1.8](https://github.com/alancleyton/awesome-ui/compare/v0.1.7...v0.1.8) (2024-03-06)
 
 
@@ -32,10 +41,6 @@
 
 * clean tailwind css directives ([934994c](https://github.com/alancleyton/awesome-ui/commit/934994c6215c1c034174bd38ab2775b13b6f8f4b))
 * **version:** fix package version ([271a61d](https://github.com/alancleyton/awesome-ui/commit/271a61de4bd5d7f693c8dda750b9b289cf4c8712))
-
-
-
-## [0.1.4](https://github.com/alancleyton/awesome-ui/compare/v0.1.3...v0.1.4) (2024-02-29)
 
 
 
