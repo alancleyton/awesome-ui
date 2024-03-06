@@ -1,12 +1,12 @@
-name: Main workflow
+name: Main
 
 on:
   push:
-    branches: [main]
+    branches:
+      - "**"
   pull_request:
-    branches: [main]
-
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+    branches:
+      - "**"
 
 jobs:
   main:

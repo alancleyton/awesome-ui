@@ -1,11 +1,14 @@
-name: Release workflow
+name: Release
 
 on:
+  workflow_run:
+    workflows: [Main]
+    branches: [main]
+    types: [completed]
   push:
     branches: [main]
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
-permissions: {}
 
 jobs:
   release:
@@ -14,6 +17,7 @@ jobs:
       issues: write
       pull-requests: write
     timeout-minutes: 15
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     env:
       CI: true
@@ -26,20 +30,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: '.node-version'
-          registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
-        run: npm install && npm run build
+        run: npm install
 
-      - name: Create changelog
-        id: changelog
-        uses: TriPSs/conventional-changelog-action@v5
-        with:
-          github-token: ${{ secrets.github_token }}
-          output-file: 'CHANGELOG.md'
-          create-summary: true
-          skip-ci: false
-
+      # create release tags
       - name: Create release
         uses: actions/create-release@v1
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
@@ -50,11 +45,12 @@ jobs:
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
 
-      - name: Publish on NPM
-        id: changesets
-        uses: changesets/action@v1
+      # create release CHANGELOG file
+      - name: Create changelog
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v5
         with:
-          publish: npm run release
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
-          GITHUB_TOKEN: ${{ secrets.github_token }}
+          github-token: ${{ secrets.github_token }}
+          output-file: 'CHANGELOG.md'
+          create-summary: true
+          skip-ci: false
