@@ -26,7 +26,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: '.node-version'
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies
         run: npm install && npm run build
@@ -51,6 +51,10 @@ jobs:
           body: ${{ steps.changelog.outputs.clean_changelog }}
 
       - name: Publish on NPM
-        run: npm publish
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: npm run release
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+          GITHUB_TOKEN: ${{ secrets.github_token }}
