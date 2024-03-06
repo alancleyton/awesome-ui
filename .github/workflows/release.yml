@@ -50,12 +50,7 @@ jobs:
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
 
-      - name: Setup npmrc
-        run: echo "registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-
       - name: Publish on NPM
-        run: npm publish --access public
-
-      - name: Remove unnecessary files
-        run: |
-          rm -r .npmrc
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
