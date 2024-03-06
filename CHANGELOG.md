@@ -1,3 +1,12 @@
+## [0.1.8](https://github.com/alancleyton/awesome-ui/compare/v0.1.7...v0.1.8) (2024-03-06)
+
+
+### Bug Fixes
+
+* **ci:** remove workflow fun ([f92ac3e](https://github.com/alancleyton/awesome-ui/commit/f92ac3efbfbb3d7062b6ab07abde8a54aef762ea))
+
+
+
 ## [0.1.7](https://github.com/alancleyton/awesome-ui/compare/v0.1.6...v0.1.7) (2024-03-06)
 
 
@@ -27,15 +36,6 @@
 
 
 ## [0.1.4](https://github.com/alancleyton/awesome-ui/compare/v0.1.3...v0.1.4) (2024-02-29)
-
-
-
-## [0.1.3](https://github.com/alancleyton/awesome-ui/compare/v0.1.2...v0.1.3) (2024-02-29)
-
-
-### Bug Fixes
-
-* **ci:** adjust ci release workflow ([78b1a29](https://github.com/alancleyton/awesome-ui/commit/78b1a29e87a8c9015d032fd9d2bc24abbbf422f8))
 
 
 
