@@ -2,7 +2,7 @@ name: Release
 
 on:
   workflow_run:
-        workflows: [Publish]
+        workflows: [Main]
         branches: [main]
         types:
           - completed
@@ -29,11 +29,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: '.node-version'
+          registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
-        run: npm install
+        run: npm install && npm run build
 
-      # create release CHANGELOG file
+      # create release CHANGELOG
       - name: Create changelog
         id: changelog
         uses: TriPSs/conventional-changelog-action@v5
@@ -43,7 +44,7 @@ jobs:
           create-summary: true
           skip-ci: false
 
-      # create release tags
+      # create release new tag
       - name: Create release
         uses: actions/create-release@v1
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
@@ -53,3 +54,9 @@ jobs:
           tag_name: ${{ steps.changelog.outputs.tag }}
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
+
+      # publish package to NPM after create release new version and tag
+      - name: Publish on NPM
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
