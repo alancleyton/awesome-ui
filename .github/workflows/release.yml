@@ -12,12 +12,12 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     permissions:
       contents: write
       issues: write
       pull-requests: write
     timeout-minutes: 15
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     env:
       CI: true
