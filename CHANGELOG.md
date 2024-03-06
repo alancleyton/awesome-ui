@@ -1,3 +1,12 @@
+## [0.1.7](https://github.com/alancleyton/awesome-ui/compare/v0.1.6...v0.1.7) (2024-03-06)
+
+
+### Bug Fixes
+
+* **ci:** adjust create release changelog step ([fb15f1d](https://github.com/alancleyton/awesome-ui/commit/fb15f1d2583dd818d8cfea732c2b06627165f9d4))
+
+
+
 ## [0.1.6](https://github.com/alancleyton/awesome-ui/compare/v0.1.5...v0.1.6) (2024-03-06)
 
 
@@ -27,15 +36,6 @@
 ### Bug Fixes
 
 * **ci:** adjust ci release workflow ([78b1a29](https://github.com/alancleyton/awesome-ui/commit/78b1a29e87a8c9015d032fd9d2bc24abbbf422f8))
-
-
-
-## [0.1.2](https://github.com/alancleyton/awesome-ui/compare/v0.1.1...v0.1.2) (2024-02-29)
-
-
-### Bug Fixes
-
-* **ci:** adjust release workflow registry url ([ebebdac](https://github.com/alancleyton/awesome-ui/commit/ebebdac71169be5acd2f4c1523dabd7d13d5a716))
 
 
 
