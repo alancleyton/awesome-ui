@@ -1,0 +1,25 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
+
+
+*,
+*::before,
+*::after {
+  @apply a-box-border;
+}
+
+ol, ul {
+  @apply a-list-none a-m-0 a-p-0;
+}
+
+a {
+  @apply a-no-underline;
+}
+
+h1, h2, h3, h4, h5, h6, span, p, small, a, em, strong {
+  @apply a-m-0 a-p-0;
+  font-size: inherit;
+  font-weight: inherit;
+}
