@@ -1,13 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 
+import { defaultTheme } from './src';
+
 const tailwindcss = require('tailwindcss');
 const nesting = require('@tailwindcss/nesting')(require('postcss-nesting'));
 const autoprefixer = require('autoprefixer');
 
-export default {
+module.exports = {
+  prefix: 'a-',
+  mode: 'jit',
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
-  theme: {
-    extend: {},
-  },
+  theme: defaultTheme,
   plugins: [tailwindcss, nesting, autoprefixer],
 };

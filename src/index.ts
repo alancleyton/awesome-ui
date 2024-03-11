@@ -1,1 +1,1 @@
-import './index.css';
+export { default as defaultTheme } from './theme/defaultTheme';
