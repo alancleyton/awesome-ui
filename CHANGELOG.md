@@ -1,3 +1,18 @@
+# [0.2.0](https://github.com/alancleyton/awesome-ui/compare/v0.1.9...v0.2.0) (2024-03-12)
+
+
+### Bug Fixes
+
+* **lint:** ad .cjs extention to eslint and prettier config files ([543e6a1](https://github.com/alancleyton/awesome-ui/commit/543e6a158e47e1db3c55da627365310f3539f2f4))
+
+
+### Features
+
+* **theme:** add default theme ([eb4aade](https://github.com/alancleyton/awesome-ui/commit/eb4aadefe0d735c14b55067647da3cf20866032a))
+* **theme:** add preflight and main css files ([d5e9a48](https://github.com/alancleyton/awesome-ui/commit/d5e9a4828d1e042432b1697d032c0419edf1dc50))
+
+
+
 ## [0.1.9](https://github.com/alancleyton/awesome-ui/compare/v0.1.8...v0.1.9) (2024-03-06)
 
 
@@ -31,16 +46,6 @@
 ### Bug Fixes
 
 * **ci:** adjust release ci workflow ([d24f3bb](https://github.com/alancleyton/awesome-ui/commit/d24f3bb53da9ec387724d6fc87302480bded3b49))
-
-
-
-## [0.1.5](https://github.com/alancleyton/awesome-ui/compare/v0.1.4...v0.1.5) (2024-03-05)
-
-
-### Bug Fixes
-
-* clean tailwind css directives ([934994c](https://github.com/alancleyton/awesome-ui/commit/934994c6215c1c034174bd38ab2775b13b6f8f4b))
-* **version:** fix package version ([271a61d](https://github.com/alancleyton/awesome-ui/commit/271a61de4bd5d7f693c8dda750b9b289cf4c8712))
 
 
 
