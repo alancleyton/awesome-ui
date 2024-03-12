@@ -16,7 +16,6 @@
   },
   "private": false,
   "version": "0.1.9",
-  "type": "module",
   "engines": {
     "node": ">=18",
     "npm": ">=9"
