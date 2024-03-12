@@ -12,7 +12,7 @@ module.exports = {
   theme: {
     extend: {
       ...defaultTheme,
-    }
+    },
   },
   plugins: [tailwindcss, nesting, autoprefixer],
 };
