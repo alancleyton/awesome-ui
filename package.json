@@ -4,6 +4,7 @@
   "author": "Alan Cleyton <alancleyton67@gmail.com>",
   "main": "dist/cjs/index.ts",
   "module": "dist/esm/index.ts",
+  "type": "module",
   "files": [
     "dist",
     "package.json",
