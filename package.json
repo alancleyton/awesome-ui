@@ -23,6 +23,7 @@
   },
   "scripts": {
     "prebuild": "rm -rf dist",
+    "build:css": "tailwindcss -o src/index.css --minify",
     "build": "npm run prebuild && rollup -c",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
