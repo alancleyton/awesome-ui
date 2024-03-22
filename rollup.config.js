@@ -2,6 +2,7 @@ import * as fs from 'fs';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
+import { typescriptPaths } from 'rollup-plugin-typescript-paths';
 import terser from '@rollup/plugin-terser';
 import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
@@ -40,6 +41,6 @@ export default [
     input: 'dist/esm/index.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     external: [/\.css$/],
-    plugins: [dts()],
+    plugins: [dts(), typescriptPaths()],
   },
 ];
