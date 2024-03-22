@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@awesomeui': fileURLToPath(new URL('./src', import.meta.url)),
+      '@awesome-ui': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
 });
