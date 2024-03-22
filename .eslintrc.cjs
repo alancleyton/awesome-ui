@@ -37,7 +37,7 @@ module.exports = {
       },
       alias : {
         extensions: ['.ts', '.tsx', '.css'],
-        map: [['@', './src']]
+        map: [['@awesomeui', './src']]
       }
     }
   }

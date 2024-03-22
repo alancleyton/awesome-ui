@@ -1,1 +1,1 @@
-export { default as defaultTheme } from './theme/defaultTheme';
+export { default as defaultTheme } from '@awesomeui/theme/defaultTheme';

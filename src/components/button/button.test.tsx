@@ -3,7 +3,7 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { axe } from 'vitest-axe';
 import { render, screen, cleanup } from '@testing-library/react';
 
-import { Button } from '@/components/button';
+import { Button } from '@awesomeui/components/button';
 
 describe('button', () => {
   beforeEach(() => {

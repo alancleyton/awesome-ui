@@ -5,7 +5,7 @@ import type { ButtonProps as AriaButtonProps } from 'react-aria-components';
 import { cva } from 'class-variance-authority';
 import type { VariantProps } from 'class-variance-authority';
 
-import { cn } from '@/utils/cn';
+import { cn } from '@awesomeui/utils';
 
 type ButtonRef = ForwardedRef<HTMLButtonElement>;
 type ButtonVariantProps = VariantProps<typeof buttonVariants>;

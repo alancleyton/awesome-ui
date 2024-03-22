@@ -29,7 +29,7 @@
     /* Import alias */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@awesomeui/*": ["./src/*"]
     },
   },
   "include": ["src", "tests/setup.ts"],
