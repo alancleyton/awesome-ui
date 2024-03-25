@@ -8,6 +8,8 @@ import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import css from 'rollup-plugin-import-css';
 import dts from 'rollup-plugin-dts';
+import alias from '@rollup/plugin-alias';
+import path from 'path';
 
 const pkg = JSON.parse(fs.readFileSync('./package.json'));
 
@@ -38,9 +40,20 @@ export default [
     ],
   },
   {
-    input: 'dist/esm/index.ts',
+    input: 'dist/esm/types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     external: [/\.css$/],
-    plugins: [dts(), typescriptPaths()],
+    plugins: [
+      alias({
+        entries: [
+          {
+            find: '@awesome-ui',
+            replacement: path.resolve('./src'),
+          },
+        ],
+      }),
+      dts(),
+      typescriptPaths(),
+    ],
   },
 ];
