@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ESNext",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["ESNext", "DOM"],
     "module": "ESNext",
     "skipLibCheck": true,
     "types": ["node", "vite/client", "vitest/globals", "@testing-library/jest-dom"],
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
@@ -25,6 +25,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
 
     /* Import alias */
     "baseUrl": ".",
@@ -32,6 +33,5 @@
       "@awesome-ui/*": ["./src/*"]
     },
   },
-  "include": ["src", "tests/setup.ts"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src", "tests/setup.ts", "vite.config.ts"],
 }
