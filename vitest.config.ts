@@ -12,7 +12,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': _resolve('src'),
+      '@awesome-ui': _resolve('src'),
     },
   },
 });
