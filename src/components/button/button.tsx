@@ -2,11 +2,8 @@ import { forwardRef } from 'react';
 import { Button as AriaButton } from 'react-aria-components';
 
 import { cn } from '@awesome-ui/utils';
-import {
-  ButtonRef,
-  ButtonProps,
-} from '@awesome-ui/components/button/button-types';
-import { buttonVariants } from '@awesome-ui/components/button/button-styles';
+import { ButtonRef, ButtonProps } from './button.types';
+import { buttonVariants } from './button.styles';
 
 const Button = forwardRef((props: ButtonProps, ref: ButtonRef) => {
   const { children, type, size, variant, isFull, ...otherProps } = props;
@@ -24,5 +21,4 @@ const Button = forwardRef((props: ButtonProps, ref: ButtonRef) => {
 
 Button.displayName = 'Button';
 
-export { Button };
-export type { ButtonProps };
+export default Button;
