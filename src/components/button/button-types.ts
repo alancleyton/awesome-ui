@@ -1,7 +1,7 @@
 import type { ReactNode, ForwardedRef } from 'react';
 import type { ButtonProps as AriaButtonProps } from 'react-aria-components';
 
-import { ButtonVariantProps } from '@awesome-ui/components/button';
+import type { ButtonVariantProps } from '@awesome-ui/components/button/button-styles';
 
 type ButtonRef = ForwardedRef<HTMLButtonElement>;
 

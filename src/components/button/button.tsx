@@ -5,20 +5,24 @@ import { cn } from '@awesome-ui/utils';
 import {
   ButtonRef,
   ButtonProps,
-  buttonVariants,
-} from '@awesome-ui/components/button';
+} from '@awesome-ui/components/button/button-types';
+import { buttonVariants } from '@awesome-ui/components/button/button-styles';
 
 const Button = forwardRef((props: ButtonProps, ref: ButtonRef) => {
-  const { children, type, size, variant, isFull, ...rest } = props;
+  const { children, type, size, variant, isFull, ...otherProps } = props;
   const classNames = cn(
     buttonVariants({ size, variant, isFull }),
-    rest.className,
+    otherProps.className,
   );
+
   return (
-    <AriaButton ref={ref} type={type} {...rest} className={classNames}>
+    <AriaButton ref={ref} type={type} {...otherProps} className={classNames}>
       {children}
     </AriaButton>
   );
 });
 
+Button.displayName = 'Button';
+
 export { Button };
+export type { ButtonProps };
