@@ -1,3 +1,13 @@
+## [0.3.1](https://github.com/alancleyton/awesome-ui/compare/v0.3.0...v0.3.1) (2024-03-26)
+
+
+### Bug Fixes
+
+* add components correct export ([670f997](https://github.com/alancleyton/awesome-ui/commit/670f99721b71a5f6ac04b09e2d4a37e53a994ecc))
+* **rollup:** uncomment rollup-plugin-dts for declaration types ([7d5d3e6](https://github.com/alancleyton/awesome-ui/commit/7d5d3e64b42edbf0e97d35dcbb3ef64014bc17db))
+
+
+
 # [0.3.0](https://github.com/alancleyton/awesome-ui/compare/v0.2.0...v0.3.0) (2024-03-26)
 
 
@@ -46,15 +56,6 @@
 ### Bug Fixes
 
 * **ci:** remove workflow fun ([f92ac3e](https://github.com/alancleyton/awesome-ui/commit/f92ac3efbfbb3d7062b6ab07abde8a54aef762ea))
-
-
-
-## [0.1.7](https://github.com/alancleyton/awesome-ui/compare/v0.1.6...v0.1.7) (2024-03-06)
-
-
-### Bug Fixes
-
-* **ci:** adjust create release changelog step ([fb15f1d](https://github.com/alancleyton/awesome-ui/commit/fb15f1d2583dd818d8cfea732c2b06627165f9d4))
 
 
 
