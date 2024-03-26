@@ -22,9 +22,8 @@
     "npm": ">=9"
   },
   "scripts": {
-    "prebuild": "rm -rf dist",
-    "build:css": "tailwindcss -o src/index.css --minify",
-    "build": "npm run prebuild && rollup -c",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && rollup -c",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
     "storybook": "storybook dev -p 6006",
