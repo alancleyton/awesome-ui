@@ -23,7 +23,8 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npm run clean && rollup -c",
+    "build-tailwind": "tailwindcss -i ./src/index.css -o ./dist/index.css",
+    "build": "npm run clean && rollup -c && npm run build-tailwind",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
     "storybook": "storybook dev -p 6006",

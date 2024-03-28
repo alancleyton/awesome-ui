@@ -2,10 +2,10 @@ name: Release
 
 on:
   workflow_run:
-        workflows: [Main]
-        branches: [main]
-        types:
-          - completed
+    workflows: [Main]
+    branches: [main]
+    types:
+      - completed
   push:
     branches: [main]
 
