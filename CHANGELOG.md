@@ -1,3 +1,12 @@
+## [0.3.3](https://github.com/alancleyton/awesome-ui/compare/v0.3.1...v0.3.3) (2024-03-28)
+
+
+### Bug Fixes
+
+* **version:** add correct version to package.json ([4ab05e9](https://github.com/alancleyton/awesome-ui/commit/4ab05e9dbae3ae38f3e160096625e79749f04b0a))
+
+
+
 ## [0.3.1](https://github.com/alancleyton/awesome-ui/compare/v0.3.0...v0.3.1) (2024-03-26)
 
 
@@ -47,15 +56,6 @@
 ### Bug Fixes
 
 * adjust package version ([7c1377a](https://github.com/alancleyton/awesome-ui/commit/7c1377a9aab3a40598712d4f2bd015314d043c5b))
-
-
-
-## [0.1.8](https://github.com/alancleyton/awesome-ui/compare/v0.1.7...v0.1.8) (2024-03-06)
-
-
-### Bug Fixes
-
-* **ci:** remove workflow fun ([f92ac3e](https://github.com/alancleyton/awesome-ui/commit/f92ac3efbfbb3d7062b6ab07abde8a54aef762ea))
 
 
 
