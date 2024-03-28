@@ -50,34 +50,34 @@ describe('button', () => {
     render(<Button>button</Button>);
 
     const button = screen.getByRole('button', { name: /button/ });
-    expect(button).toHaveClass('py-3 px-6 text-md');
+    expect(button).toHaveClass('a-py-3 a-px-6 a-text-md');
   });
 
   it('should render with provided size', () => {
     render(<Button size="lg">button</Button>);
 
     const button = screen.getByRole('button', { name: /button/ });
-    expect(button).toHaveClass('py-4 px-9 text-lg');
+    expect(button).toHaveClass('a-py-4 a-px-9 a-text-lg');
   });
 
   it('should render with default variant="primary"', () => {
     render(<Button>button</Button>);
 
     const button = screen.getByRole('button', { name: /button/ });
-    expect(button).toHaveClass('text-gray-90 bg-blue border-blue');
+    expect(button).toHaveClass('a-text-gray-90 a-bg-blue a-border-blue');
   });
 
   it('should render with provided variant', () => {
     render(<Button variant="info">button</Button>);
 
     const button = screen.getByRole('button', { name: /button/ });
-    expect(button).toHaveClass('text-gray-90 bg-yellow border-yellow');
+    expect(button).toHaveClass('a-text-gray-90 a-bg-yellow a-border-yellow');
   });
 
   it('should render with full width', () => {
     render(<Button isFull>button</Button>);
 
     const button = screen.getByRole('button', { name: /button/ });
-    expect(button).toHaveClass('w-full');
+    expect(button).toHaveClass('a-w-full');
   });
 });

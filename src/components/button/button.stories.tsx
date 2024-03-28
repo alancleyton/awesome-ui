@@ -19,6 +19,48 @@ export const Primary: Story = {
     variant: 'primary',
   },
   render: ({ children, type, size, variant }) => (
+    <Button type={type} size={size} variant={variant} className="a-font-roboto">
+      {children}
+    </Button>
+  ),
+};
+
+export const Small: Story = {
+  args: {
+    children: 'Primary',
+    type: 'button',
+    size: 'sm',
+    variant: 'primary',
+  },
+  render: ({ children, type, size, variant }) => (
+    <Button type={type} size={size} variant={variant}>
+      {children}
+    </Button>
+  ),
+};
+
+export const Medium: Story = {
+  args: {
+    children: 'Primary',
+    type: 'button',
+    size: 'md',
+    variant: 'primary',
+  },
+  render: ({ children, type, size, variant }) => (
+    <Button type={type} size={size} variant={variant}>
+      {children}
+    </Button>
+  ),
+};
+
+export const Large: Story = {
+  args: {
+    children: 'Primary',
+    type: 'button',
+    size: 'lg',
+    variant: 'primary',
+  },
+  render: ({ children, type, size, variant }) => (
     <Button type={type} size={size} variant={variant}>
       {children}
     </Button>

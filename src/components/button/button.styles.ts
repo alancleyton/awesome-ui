@@ -5,66 +5,66 @@ import { cn } from '@awesome-ui/utils';
 
 const buttonVariants = cva(
   cn(
-    'inline-flex items-center justify-center gap-3',
-    'font-sans font-medium leading-body text-center whitespace-nowrap',
-    'transition duration-300 ease-in-out',
-    'border border-solid border-transparent',
-    'overflow-hidden focus:outline-none rounded-sm',
-    'disabled:text-gray-30 disabled:bg-gray-10 disabled:border-gray-10 disabled:cursor-not-allowed',
+    'a-inline-flex a-items-center a-justify-center a-gap-3',
+    'a-font-sans a-font-medium a-leading-body a-text-center a-whitespace-nowrap',
+    'a-transition a-duration-300 a-ease-in-out',
+    'a-border a-border-solid a-border-transparent',
+    'a-overflow-hidden focus:a-outline-none a-rounded-sm',
+    'disabled:a-text-gray-30 disabled:a-bg-gray-10 disabled:a-border-gray-10 disabled:a-cursor-not-allowed',
   ),
   {
     variants: {
       size: {
-        sm: 'py-2 px-4 text-sm',
-        md: 'py-3 px-6 text-md',
-        lg: 'py-4 px-9 text-lg',
+        sm: 'a-py-2 a-px-4 a-text-sm',
+        md: 'a-py-3 a-px-6 a-text-md',
+        lg: 'a-py-4 a-px-9 a-text-lg',
       },
       variant: {
         primary: cn(
-          'text-gray-90 bg-blue border-blue',
-          'hover:bg-blue-100 hover:border-blue-100',
-          'focus:bg-blue-100 focus:border-blue-100',
-          'active:bg-blue-130 active:border-blue-130',
+          'a-text-gray-90 a-bg-blue a-border-blue',
+          'hover:a-bg-blue-100 hover:a-border-blue-100',
+          'focus:a-bg-blue-100 focus:a-border-blue-100',
+          'active:a-bg-blue-130 active:a-border-blue-130',
         ),
         secondary: cn(
-          'text-white bg-gray-90 border-gray-90',
-          'hover:bg-gray-80 hover:border-gray-80',
-          'focus:bg-gray-80 focus:border-gray-80',
-          'active:bg-gray-100 active:border-gray-100',
+          'a-text-white a-bg-gray-90 a-border-gray-90',
+          'hover:a-bg-gray-80 hover:a-border-gray-80',
+          'focus:a-bg-gray-80 focus:a-border-gray-80',
+          'active:a-bg-gray-100 active:a-border-gray-100',
         ),
         info: cn(
-          'text-gray-90 bg-yellow border-yellow',
-          'hover:bg-yellow-100 hover:border-yellow-100',
-          'focus:bg-yellow-100 focus:border-yellow-100',
-          'active:bg-yellow-130 active:border-yellow-130',
+          'a-text-gray-90 a-bg-yellow a-border-yellow',
+          'hover:a-bg-yellow-100 hover:a-border-yellow-100',
+          'focus:a-bg-yellow-100 focus:a-border-yellow-100',
+          'active:a-bg-yellow-130 active:a-border-yellow-130',
         ),
         danger: cn(
-          'text-gray-90 bg-red border-red',
-          'hover:bg-red-100 hover:border-red-100',
-          'focus:bg-red-100 focus:border-red-100',
-          'active:bg-red-130 active:border-red-130',
+          'a-text-gray-90 a-bg-red a-border-red',
+          'hover:a-bg-red-100 hover:a-border-red-100',
+          'focus:a-bg-red-100 focus:a-border-red-100',
+          'active:a-bg-red-130 active:a-border-red-130',
         ),
         success: cn(
-          'text-gray-90 bg-green border-green',
-          'hover:bg-green-100 hover:border-green-100',
-          'focus:bg-green-100 focus:border-green-100',
-          'active:bg-green-130 active:border-green-130',
+          'a-text-gray-90 a-bg-green a-border-green',
+          'hover:a-bg-green-100 hover:a-border-green-100',
+          'focus:a-bg-green-100 focus:a-border-green-100',
+          'active:a-bg-green-130 active:a-border-green-130',
         ),
         ghost: cn(
-          'text-blue bg-gray-10 border-gray-10',
-          'hover:bg-gray-20 hover:border-gray-20',
-          'focus:bg-gray-20 focus:border-gray-20',
-          'active:bg-gray-30 active:border-gray-30',
+          'a-text-blue a-bg-gray-10 a-border-gray-10',
+          'hover:a-bg-gray-20 hover:a-border-gray-20',
+          'focus:a-bg-gray-20 focus:a-border-gray-20',
+          'active:a-bg-gray-30 active:a-border-gray-30',
         ),
         card: cn(
-          'text-gray-90 bg-white border-gray-10',
-          'hover:bg-gray-10 hover:border-gray-10',
-          'focus:bg-gray-10 focus:border-gray-10',
-          'active:bg-gray-30 active:border-gray-30',
+          'a-text-gray-90 a-bg-white a-border-gray-10',
+          'hover:a-bg-gray-10 hover:a-border-gray-10',
+          'focus:a-bg-gray-10 focus:a-border-gray-10',
+          'active:a-bg-gray-30 active:a-border-gray-30',
         ),
       },
       isFull: {
-        true: 'w-full',
+        true: 'a-w-full',
       },
     },
     defaultVariants: {
@@ -76,5 +76,4 @@ const buttonVariants = cva(
 );
 
 type ButtonVariantProps = VariantProps<typeof buttonVariants>;
-
 export { buttonVariants, type ButtonVariantProps };
