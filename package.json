@@ -35,6 +35,9 @@
     "prepare": "husky",
     "release": "changeset publish --access public"
   },
+  "peerDependencies": {
+    "react": ">=18"
+  },
   "dependencies": {
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "class-variance-authority": "^0.7.0",
