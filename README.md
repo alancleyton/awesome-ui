@@ -22,3 +22,48 @@
   </p>
 </div>
 
+<br />
+
+This lib provides ready-to-use, accessible, reusable, and composable
+React UI components based on the [Tailwind CSS](https://tailwindcss.com/) framework utility classes.
+
+## Installation
+
+```sh
+# with Yarn
+$ yarn add @alancleyton67/awesome-ui
+
+# with npm
+$ npm i @alancleyton67/awesome-ui
+```
+
+## Usage
+
+1. To start using the components, on your application entry point, import the CSS file.
+
+```jsx
+// Do this at the root of your application
+import '@alancleyton67/awesome-ui/dist/index.css';
+```
+
+2. Start using the components in your application
+
+```jsx
+import { Button } from '@alancleyton67/awesome-ui';
+
+const App = () => {
+  const onPress = () => alert('On pressed!')
+
+  <div>
+    <Button variant="info" onPress={onPress}>
+      info button
+    </Button>
+  </div>
+};
+
+export default App;
+```
+
+## License
+
+MIT
