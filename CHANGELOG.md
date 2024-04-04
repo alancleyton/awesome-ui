@@ -1,3 +1,12 @@
+## [0.3.8](https://github.com/alancleyton/awesome-ui/compare/v0.3.3...v0.3.8) (2024-04-04)
+
+
+### Bug Fixes
+
+* fix project version ([4bd131b](https://github.com/alancleyton/awesome-ui/commit/4bd131b83497212bb0eb38b30ae6604f21aa7eac))
+
+
+
 ## [0.3.3](https://github.com/alancleyton/awesome-ui/compare/v0.3.1...v0.3.3) (2024-03-28)
 
 
@@ -47,15 +56,6 @@
 
 * **theme:** add default theme ([eb4aade](https://github.com/alancleyton/awesome-ui/commit/eb4aadefe0d735c14b55067647da3cf20866032a))
 * **theme:** add preflight and main css files ([d5e9a48](https://github.com/alancleyton/awesome-ui/commit/d5e9a4828d1e042432b1697d032c0419edf1dc50))
-
-
-
-## [0.1.9](https://github.com/alancleyton/awesome-ui/compare/v0.1.8...v0.1.9) (2024-03-06)
-
-
-### Bug Fixes
-
-* adjust package version ([7c1377a](https://github.com/alancleyton/awesome-ui/commit/7c1377a9aab3a40598712d4f2bd015314d043c5b))
 
 
 
