@@ -16,7 +16,7 @@
     "url": "git+https://github.com/alancleyton/awesome-ui.git"
   },
   "private": false,
-  "version": "0.3.3",
+  "version": "0.3.4",
   "engines": {
     "node": ">=18",
     "npm": ">=9"
@@ -34,6 +34,9 @@
     "test:ci": "vitest --run",
     "prepare": "husky",
     "release": "changeset publish --access public"
+  },
+  "peerDependencies": {
+    "react": ">=18"
   },
   "dependencies": {
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
