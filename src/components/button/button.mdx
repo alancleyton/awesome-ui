@@ -1,0 +1,62 @@
+import { Canvas, Meta, Story, Source, Controls } from '@storybook/blocks';
+import * as ButtonStories from './button.stories';
+import { Button } from '.'
+
+<Meta title="Button docs" of={ButtonStories} />
+
+# Overview
+
+Awesome button, used to take actions in forms, dialogs and navigation.
+Provides seven different color variants: `primary`, `secondary`, `info`, `danger`, `success`, `ghost`, `card`.
+
+The Button component is based on [React Aria](https://react-spectrum.adobe.com/react-aria/getting-started.html) unstyled and accessible [button component](https://react-spectrum.adobe.com/react-aria/Button.html).
+
+<br />
+
+### Primary buttons
+
+Buttons can have different variant colors by setting the `variant` prop. The default variant is `primary`
+
+<Canvas>
+  <Story of={ButtonStories.Primary} />
+  <Story of={ButtonStories.Secondary} />
+  <Story of={ButtonStories.Info} />
+  <Story of={ButtonStories.Danger} />
+  <Story of={ButtonStories.Success} />
+  <Story of={ButtonStories.Ghost} />
+  <Story of={ButtonStories.Card} />
+</Canvas>
+
+### Button types
+
+Specifies the button type when used in an HTML form. Specify `button`, `submit` or `reset`. The default type is `button`.
+
+### Button sizes
+
+Buttons can have different sizes by setting the `size` prop. The default size is `md`.
+
+<Canvas>
+  <Story of={ButtonStories.Small} />
+  <Story of={ButtonStories.Medium} />
+  <Story of={ButtonStories.Large} />
+</Canvas>
+
+### Disabled buttons
+
+Specifies a non interactive button with `isDisabled` prop to render a button with disabled state.
+
+<Canvas>
+  <Story of={ButtonStories.Disabled} />
+</Canvas>
+
+### Full width buttons
+
+Create a full width buttons by setting the `isFull` prop.
+
+<Canvas>
+  <Story of={ButtonStories.FullWidth} />
+</Canvas>
+
+### Button Properties
+
+<Controls of={ButtonStories.Primary} />

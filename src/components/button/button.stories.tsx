@@ -1,182 +1,131 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from '.';
+import { Button, ButtonProps } from '.';
 
-const meta: Meta<typeof Button> = {
-  title: 'Ui components/Button',
+export default {
+  title: 'Components/Button',
   component: Button,
-};
+  argTypes: {
+    type: {
+      name: 'type',
+      type: 'string',
+      description: 'Applies the button type .',
+      defaultValue: 'primary',
+    },
+    variant: {
+      name: 'variant',
+      type: 'string',
+      description: 'Applies color variants to the button.',
+      defaultValue: 'primary',
+    },
+    size: {
+      name: 'size',
+      type: 'string',
+      description: 'Applies the size of the button.',
+      defaultValue: 'md',
+    },
+    isDisabled: {
+      name: 'isDisabled',
+      type: 'boolean',
+      description: 'Change the state of the button to disabled.',
+      defaultValue: false,
+    },
+    isFull: {
+      name: 'isFull',
+      type: 'boolean',
+      description: 'Applies 100% to the button width.',
+      defaultValue: false,
+    },
+  },
+} as Meta<ButtonProps>;
 
-type Story = StoryObj<typeof Button>;
-
-export default meta;
+type Story = StoryObj<ButtonProps>;
 
 export const Primary: Story = {
   args: {
-    children: 'Primary',
-    type: 'button',
-    size: 'md',
+    children: 'primary',
     variant: 'primary',
   },
-  render: ({ children, type, size, variant }) => (
-    <Button type={type} size={size} variant={variant} className="a-font-roboto">
-      {children}
-    </Button>
-  ),
-};
-
-export const Small: Story = {
-  args: {
-    children: 'Primary',
-    type: 'button',
-    size: 'sm',
-    variant: 'primary',
-  },
-  render: ({ children, type, size, variant }) => (
-    <Button type={type} size={size} variant={variant}>
-      {children}
-    </Button>
-  ),
-};
-
-export const Medium: Story = {
-  args: {
-    children: 'Primary',
-    type: 'button',
-    size: 'md',
-    variant: 'primary',
-  },
-  render: ({ children, type, size, variant }) => (
-    <Button type={type} size={size} variant={variant}>
-      {children}
-    </Button>
-  ),
-};
-
-export const Large: Story = {
-  args: {
-    children: 'Primary',
-    type: 'button',
-    size: 'lg',
-    variant: 'primary',
-  },
-  render: ({ children, type, size, variant }) => (
-    <Button type={type} size={size} variant={variant}>
-      {children}
-    </Button>
-  ),
 };
 
 export const Secondary: Story = {
   args: {
-    children: 'Secondary',
-    type: 'button',
-    size: 'md',
+    children: 'secondary',
     variant: 'secondary',
   },
-  render: ({ children, type, size, variant }) => (
-    <Button type={type} size={size} variant={variant}>
-      {children}
-    </Button>
-  ),
 };
 
 export const Info: Story = {
   args: {
     children: 'info',
-    type: 'button',
-    size: 'md',
     variant: 'info',
   },
-  render: ({ children, type, size, variant }) => (
-    <Button type={type} size={size} variant={variant}>
-      {children}
-    </Button>
-  ),
 };
 
 export const Danger: Story = {
   args: {
-    children: 'Danger',
-    type: 'button',
-    size: 'md',
+    children: 'danger',
     variant: 'danger',
   },
-  render: ({ children, type, size, variant }) => (
-    <Button type={type} size={size} variant={variant}>
-      {children}
-    </Button>
-  ),
 };
 
 export const Success: Story = {
   args: {
-    children: 'Success',
-    type: 'button',
-    size: 'md',
+    children: 'success',
     variant: 'success',
   },
-  render: ({ children, type, size, variant }) => (
-    <Button type={type} size={size} variant={variant}>
-      {children}
-    </Button>
-  ),
 };
 
 export const Ghost: Story = {
   args: {
-    children: 'Ghost',
-    type: 'button',
-    size: 'md',
+    children: 'ghost',
     variant: 'ghost',
   },
-  render: ({ children, type, size, variant }) => (
-    <Button type={type} size={size} variant={variant}>
-      {children}
-    </Button>
-  ),
 };
 
 export const Card: Story = {
   args: {
-    children: 'Card',
-    type: 'button',
-    size: 'md',
+    children: 'card',
     variant: 'card',
   },
-  render: ({ children, type, size, variant }) => (
-    <Button type={type} size={size} variant={variant}>
-      {children}
-    </Button>
-  ),
+};
+
+export const Small: Story = {
+  args: {
+    children: 'small',
+    variant: 'primary',
+    size: 'sm',
+  },
+};
+
+export const Medium: Story = {
+  args: {
+    children: 'medium',
+    variant: 'primary',
+    size: 'md',
+  },
+};
+
+export const Large: Story = {
+  args: {
+    children: 'large',
+    variant: 'primary',
+    size: 'lg',
+  },
 };
 
 export const Disabled: Story = {
   args: {
-    children: 'Disabled',
-    type: 'button',
-    size: 'md',
+    children: 'disabled',
     variant: 'primary',
     isDisabled: true,
   },
-  render: ({ children, type, size, variant, isDisabled }) => (
-    <Button type={type} size={size} variant={variant} isDisabled={isDisabled}>
-      {children}
-    </Button>
-  ),
 };
 
 export const FullWidth: Story = {
   args: {
-    children: 'Disabled',
-    type: 'button',
-    size: 'md',
+    children: 'full button',
     variant: 'primary',
     isFull: true,
   },
-  render: ({ children, type, size, variant, isFull }) => (
-    <Button type={type} size={size} variant={variant} isFull={isFull}>
-      {children}
-    </Button>
-  ),
 };
