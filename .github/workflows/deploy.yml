@@ -4,14 +4,15 @@ on:
   push:
     branches: [main]
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   deploy:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     runs-on: ubuntu-latest
+    env:
+      CI: true
 
     steps:
       - name: Checkout
@@ -22,10 +23,15 @@ jobs:
         with:
           node-version-file: '.node-version'
 
-      - name: Deploy to gh-pages
-        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.1
+      - name: Install dependencies
+        run: npm install && npm run build
+
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Deploy to Github pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          install_command: npm install && npm run build
-          build_command: npm run build-storybook
-          path: storybook-static
-          checkout: false
+          GITHUB_TOKEN: ${{ secrets.github_token }}
+          publish_dir: ./storybook-static
+
