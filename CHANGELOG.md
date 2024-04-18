@@ -1,3 +1,7 @@
+## [0.3.9](https://github.com/alancleyton/awesome-ui/compare/v0.3.8...v0.3.9) (2024-04-18)
+
+
+
 ## [0.3.8](https://github.com/alancleyton/awesome-ui/compare/v0.3.3...v0.3.8) (2024-04-04)
 
 
@@ -41,21 +45,6 @@
 
 * add awesome button ([75fbe26](https://github.com/alancleyton/awesome-ui/commit/75fbe26a8b757df7d2e98d864bd648bffdd0fb5b))
 * export button component ([cc71ddb](https://github.com/alancleyton/awesome-ui/commit/cc71ddbca3cb9b941acf928e8d81166df7b11ad3))
-
-
-
-# [0.2.0](https://github.com/alancleyton/awesome-ui/compare/v0.1.9...v0.2.0) (2024-03-12)
-
-
-### Bug Fixes
-
-* **lint:** ad .cjs extention to eslint and prettier config files ([543e6a1](https://github.com/alancleyton/awesome-ui/commit/543e6a158e47e1db3c55da627365310f3539f2f4))
-
-
-### Features
-
-* **theme:** add default theme ([eb4aade](https://github.com/alancleyton/awesome-ui/commit/eb4aadefe0d735c14b55067647da3cf20866032a))
-* **theme:** add preflight and main css files ([d5e9a48](https://github.com/alancleyton/awesome-ui/commit/d5e9a4828d1e042432b1697d032c0419edf1dc50))
 
 
 
