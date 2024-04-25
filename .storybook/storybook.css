@@ -26,11 +26,6 @@
   color: #ffffff;
 }
 
-button.sidebar-item,
-.sidebar-subheading button {
-  pointer-events: none;
-}
-
 button.sidebar-item.sidebar-item {
   font-weight: 500;
 }
