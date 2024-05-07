@@ -9,6 +9,7 @@ const Box = forwardRef((props: BoxProps, ref: BoxRef) => {
     children,
     is = 'div',
     inline,
+    block,
     inlineBlock,
     rounded,
     p,
@@ -35,6 +36,7 @@ const Box = forwardRef((props: BoxProps, ref: BoxRef) => {
   const classNames = cn(
     boxVariants({
       inline,
+      block,
       inlineBlock,
       rounded,
       p,
