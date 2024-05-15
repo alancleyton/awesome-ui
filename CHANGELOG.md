@@ -1,3 +1,7 @@
+## [0.4.2](https://github.com/alancleyton/awesome-ui/compare/v0.4.1...v0.4.2) (2024-05-15)
+
+
+
 ## [0.4.1](https://github.com/alancleyton/awesome-ui/compare/v0.4.0...v0.4.1) (2024-05-15)
 
 
@@ -17,10 +21,6 @@
 
 
 ## [0.3.31](https://github.com/alancleyton/awesome-ui/compare/v0.3.30...v0.3.31) (2024-04-18)
-
-
-
-## [0.3.30](https://github.com/alancleyton/awesome-ui/compare/v0.3.29...v0.3.30) (2024-04-18)
 
 
 
