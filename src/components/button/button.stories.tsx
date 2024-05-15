@@ -5,38 +5,6 @@ import { Button, ButtonProps } from '.';
 export default {
   title: 'Components/Button',
   component: Button,
-  argTypes: {
-    type: {
-      name: 'type',
-      type: 'string',
-      description: 'Applies the button type',
-      defaultValue: 'primary',
-    },
-    variant: {
-      name: 'variant',
-      type: 'string',
-      description: 'Applies color variants to the button',
-      defaultValue: 'primary',
-    },
-    size: {
-      name: 'size',
-      type: 'string',
-      description: 'Applies the size of the button',
-      defaultValue: 'md',
-    },
-    isDisabled: {
-      name: 'isDisabled',
-      type: 'boolean',
-      description: 'Change the state of the button to disabled',
-      defaultValue: false,
-    },
-    isFull: {
-      name: 'isFull',
-      type: 'boolean',
-      description: 'Applies 100% to the button width',
-      defaultValue: false,
-    },
-  },
 } as Meta<ButtonProps>;
 
 type Story = StoryObj<ButtonProps>;

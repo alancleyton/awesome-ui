@@ -1,5 +1,4 @@
 import { cva } from 'class-variance-authority';
-import type { VariantProps } from 'class-variance-authority';
 
 import { cn } from '@awesome-ui/utils';
 
@@ -75,5 +74,4 @@ const buttonVariants = cva(
   },
 );
 
-type ButtonVariantProps = VariantProps<typeof buttonVariants>;
-export { buttonVariants, type ButtonVariantProps };
+export { buttonVariants };

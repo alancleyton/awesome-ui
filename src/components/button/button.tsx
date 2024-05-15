@@ -2,9 +2,14 @@ import { forwardRef } from 'react';
 import { Button as AriaButton } from 'react-aria-components';
 
 import { cn } from '@awesome-ui/utils';
-import { ButtonRef, ButtonProps } from './button.types';
-import { buttonVariants } from './button.styles';
 
+import type { ButtonRef, ButtonProps } from './button.types';
+import { buttonVariants } from './button.variants';
+
+/**
+ * Button component is used to take actions in forms, dialogs and navigation.
+ * @see Docs https://alancleyton.github.io/awesome-ui/?path=/docs/components-button--docs
+ */
 const Button = forwardRef((props: ButtonProps, ref: ButtonRef) => {
   const { children, type, size, variant, isFull, ...otherProps } = props;
   const classNames = cn(
