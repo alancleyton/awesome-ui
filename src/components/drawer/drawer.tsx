@@ -7,6 +7,13 @@ import { cn } from '@awesome-ui/utils';
 import { DrawerContext } from './drawer-context';
 import { DrawerContent } from './drawer-content';
 
+/**
+ * Drawer component are panels that sits off-screen until triggered by the user.
+ *
+ * Is used to provide navigation to other pages, can contain different kinds of content or small interactions.
+ *
+ * @see Docs https://alancleyton.github.io/awesome-ui/?path=/docs/components-drawer--docs
+ */
 const Drawer = ({
   children,
   open = false,
