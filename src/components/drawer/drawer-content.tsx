@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, MouseEvent } from 'react';
 
 import { cn } from '@awesome-ui/utils';
 
@@ -42,18 +42,31 @@ const PLACEMENT_X_SIZE = {
 
 export const DrawerContent = ({ children }: DrawerContentProps) => {
   const { open, placement, size } = useContext(DrawerContext);
+
   const PLACEMENT = placement ? placement : 'left';
   const SIZE = size ? size : 'md';
+
+  const PLACEMENT_POSITION_CLASS =
+    PLACEMENT == 'top' || PLACEMENT == 'bottom' ? 'a-h-full' : 'a-w-full';
+  const PLACEMENT_POSITION_SIZE_CLASS =
+    PLACEMENT == 'top' || PLACEMENT == 'bottom'
+      ? PLACEMENT_Y_SIZE[SIZE]
+      : PLACEMENT_X_SIZE[SIZE];
+
+  // function to prevent drawer close at click
+  const preventDrawerClose = (e: MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
   return (
     <div className="a-absolute a-inset-0 a-overflow-hidden">
       <div
         className={cn(
           'a-pointer-events-none a-fixed',
           PLACEMENT_CLASSES[PLACEMENT],
-          PLACEMENT == 'top' || PLACEMENT == 'bottom' ? 'a-h-full' : 'a-w-full',
-          PLACEMENT == 'top' || PLACEMENT == 'bottom'
-            ? PLACEMENT_Y_SIZE[SIZE]
-            : PLACEMENT_X_SIZE[SIZE],
+          PLACEMENT_POSITION_CLASS,
+          PLACEMENT_POSITION_SIZE_CLASS,
         )}
       >
         <div
@@ -63,10 +76,7 @@ export const DrawerContent = ({ children }: DrawerContentProps) => {
               ? PLACEMENT_OPEN_CLASSES[PLACEMENT]
               : PLACEMENT_CLOSE_CLASSES[PLACEMENT],
           )}
-          onClick={event => {
-            event.preventDefault();
-            event.stopPropagation();
-          }}
+          onClick={preventDrawerClose}
         >
           {children}
         </div>
