@@ -1,0 +1,147 @@
+import { Canvas, Meta, Story, Source, Controls } from '@storybook/blocks';
+import * as DrawerStories from './drawer.stories';
+import { Drawer } from '.'
+
+<Meta title="Drawer docs" of={DrawerStories} />
+
+# Overview
+
+Awesome Drawer, used to provide navigation to other pages, can contain different kinds of content or small interactions.
+
+### Import
+
+<Source dark code={`
+import { Drawer } from '@alancleyton67/awesome-ui';
+
+`} />
+
+### Usage
+<div class="custom-canvas">
+  <Story of={DrawerStories.DrawerLeft} />
+</div>
+
+<Source dark code={`
+const BasicDrawerExample = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const openDrawer = () => setIsOpen(true);
+  const closeDrawer = () => setIsOpen(false);
+
+  <>
+    <Button onPress={openDrawer}>open</Button>
+    <Drawer open={isOpen} onClose={closeDrawer}>
+      <Drawer.Content>
+        <div className="p-5 h-full bg-white">
+          <p>left</p>
+          <Button onPress={handleCloseDrawer}>close drawer</Button>
+        </div>
+      </Drawer.Content>
+    </Drawer>
+  </>
+};
+`} />
+
+### Drawer placement
+
+The Drawer component sits off-screen until triggered by the user, it can appear from any corner of the side.
+Use the `placement` prop to specify which side of the screen the Drawer should appears.
+Placements can be `top`, `right`, `bottom`, `left`. The default size is `left`
+
+<div class="custom-canvas" style={{ display: 'flex', gap: '16px'}}>
+  <Story of={DrawerStories.DrawerTop} />
+  <Story of={DrawerStories.DrawerRight} />
+  <Story of={DrawerStories.DrawerBottom} />
+  <Story of={DrawerStories.DrawerLeft} />
+</div>
+
+<Source dark code={`
+const DrawerPlacementsExample = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [placement, setPlacement] = useState('left');
+
+  const openDrawer = () => setIsOpen(true);
+
+  const closeDrawer = () => setIsOpen(false);
+
+  const placements = ['top', 'right', 'bottom', 'left'];
+
+  const changePlacement = (newPlacement) => {
+    setPlacement(newPlacement);
+    openDrawer();
+  };
+
+  <>
+    {placements.map((placement) => (
+        <Button
+          onPress={() => changePlacement(placement)}
+          key={placement}
+        >
+          {placement} drawer
+        </Button>
+    ))};
+
+    <Drawer placement={placement} open={isOpen} onClose={closeDrawer}>
+      <Drawer.Content>
+        <div className="p-5 h-full bg-white">
+          <p>drawer content</p>
+          <Button onPress={handleCloseDrawer}>close drawer</Button>
+        </div>
+      </Drawer.Content>
+    </Drawer>
+  </>
+};
+`} />
+
+### Drawer sizes
+
+Drawer content panel can have different sizes by setting the `size` prop.
+The size prop can receive `sm`, `md`, `lg` and `full` values. The default size is `md`.
+
+<div class="custom-canvas" style={{ display: 'flex', gap: '16px'}}>
+  <Story of={DrawerStories.DrawerSM} />
+  <Story of={DrawerStories.DrawerMD} />
+  <Story of={DrawerStories.DrawerLG} />
+  <Story of={DrawerStories.DrawerFull} />
+</div>
+
+<Source dark code={`
+const DrawerSizesExample = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [size, setSize] = useState('md');
+
+  const openDrawer = () => setIsOpen(true);
+
+  const closeDrawer = () => setIsOpen(false);
+
+  const placements = ['sm', 'md', 'lg', 'full'];
+
+  const changeSize = (newSize) => {
+    setSize(newSize);
+    openDrawer();
+  };
+
+  <>
+    {placements.map((size) => (
+        <Button
+          onPress={() => changeSize(size)}
+          key={size}
+        >
+          {size} drawer
+        </Button>
+    ))};
+
+    <Drawer size={size} open={isOpen} onClose={closeDrawer}>
+      <Drawer.Content>
+        <div className="p-5 h-full bg-white">
+          <p>drawer content</p>
+          <Button onPress={handleCloseDrawer}>close drawer</Button>
+        </div>
+      </Drawer.Content>
+    </Drawer>
+  </>
+};
+`} />
+
+
+### Drawer Properties
+
+<Controls of={DrawerStories.DrawerLeft} />

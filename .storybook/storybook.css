@@ -36,3 +36,14 @@ button.sidebar-item.sidebar-item {
 .sidebar-subheading span {
   display: none;
 }
+
+
+/* Custom classes */
+.custom-canvas {
+  display: block;
+  position: relative;
+  padding: 30px 20px;
+  box-shadow: rgba(0, 0, 0, 0.10) 0 1px 3px 0;
+  border: 1px solid hsla(203, 50%, 30%, 0.15);
+  border-radius: 4px;
+}
