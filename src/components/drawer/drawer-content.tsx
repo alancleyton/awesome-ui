@@ -40,7 +40,10 @@ const PLACEMENT_X_SIZE = {
   full: '',
 };
 
-export const DrawerContent = ({ children }: DrawerContentProps) => {
+export const DrawerContent = ({
+  children,
+  ...otherProps
+}: DrawerContentProps) => {
   const { open, placement, size } = useContext(DrawerContext);
 
   const PLACEMENT = placement ? placement : 'left';
@@ -60,7 +63,13 @@ export const DrawerContent = ({ children }: DrawerContentProps) => {
   };
 
   return (
-    <div className="a-absolute a-inset-0 a-overflow-hidden">
+    <div
+      className={cn(
+        'a-absolute a-inset-0 a-overflow-hidden',
+        open ? 'a-drawer-content-open' : 'a-drawer-content-close',
+      )}
+      {...otherProps}
+    >
       <div
         className={cn(
           'a-pointer-events-none a-fixed',

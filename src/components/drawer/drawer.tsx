@@ -20,6 +20,7 @@ const Drawer = ({
   placement = 'left',
   size = 'md',
   onClose,
+  ...otherProps
 }: DrawerProps) => {
   const drawerContextValue = useMemo(
     () => ({ open, onClose, placement, size }),
@@ -29,9 +30,15 @@ const Drawer = ({
   return (
     <DrawerContext.Provider value={drawerContextValue}>
       <div
-        className="a-drawer a-relative a-z-10"
+        className={cn(
+          'a-drawer a-relative a-z-10',
+          open ? 'a-drawer-open' : 'a-drawer-close',
+          `a-drawer-${placement}`,
+          `a-drawer-${size}`,
+        )}
         role="dialog"
         onClick={onClose}
+        {...otherProps}
       >
         <div
           className={cn(
