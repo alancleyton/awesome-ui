@@ -1,7 +1,9 @@
-import { ReactNode, ComponentProps } from 'react';
+import { ReactNode, ComponentProps, HTMLAttributes } from 'react';
 
-interface NavbarBrandProps extends ComponentProps<'a'> {
+interface NavbarBrandProps
+  extends HTMLAttributes<HTMLAnchorElement | HTMLDivElement> {
   children?: ReactNode;
+  href?: string;
 }
 
 interface NavbarNavProps extends ComponentProps<'div'> {

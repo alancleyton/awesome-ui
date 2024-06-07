@@ -15,7 +15,7 @@ const NavbarTemplate: Story = {
   render: ({ variant, size }) => {
     return (
       <Navbar variant={variant} size={size}>
-        <Navbar.Brand href="/logo">
+        <Navbar.Brand>
           <span className="a-text-white a-font-semibold a-text-base">LOGO</span>
         </Navbar.Brand>
         <Navbar.Nav alignment="left" collapse>

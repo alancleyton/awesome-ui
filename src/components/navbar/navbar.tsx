@@ -1,5 +1,4 @@
 import type {
-  NavbarBrandProps,
   NavbarNavProps,
   NavbarNavItemsProps,
   NavbarNavItemProps,
@@ -10,12 +9,7 @@ import { navbarVariants, navbarNavVariants } from './navbar.variants';
 
 import { cn } from '@awesome-ui/utils';
 
-/**
- * Navbar Brand.
- */
-const NavbarBrand = ({ children, ...otherProps }: NavbarBrandProps) => {
-  return <a {...otherProps}>{children}</a>;
-};
+import { NavbarBrand } from './navbar-brand';
 
 /**
  * Navbar Nav.
