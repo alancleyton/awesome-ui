@@ -1,9 +1,8 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, LinkHTMLAttributes } from 'react';
 
-interface NavbarBrandProps
-  extends HTMLAttributes<HTMLAnchorElement | HTMLDivElement> {
-  href?: string;
-}
+type NavbarBrandProps =
+  | LinkHTMLAttributes<HTMLAnchorElement>
+  | HTMLAttributes<HTMLDivElement>;
 
 interface NavbarNavProps extends HTMLAttributes<HTMLDivElement> {
   alignment?: 'left' | 'right' | 'center';
