@@ -18,7 +18,7 @@ const NavbarTemplate: Story = {
         <Navbar.Brand>
           <span className="a-text-white a-font-semibold a-text-base">LOGO</span>
         </Navbar.Brand>
-        <Navbar.Nav alignment="left" collapse>
+        <Navbar.Nav collapse>
           <Navbar.NavItems>
             <Navbar.NavItem>
               <Navbar.NavLink href="#">Home</Navbar.NavLink>

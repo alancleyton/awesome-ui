@@ -3,12 +3,11 @@ import { ReactNode, ComponentProps, HTMLAttributes } from 'react';
 interface NavbarBrandProps
   extends HTMLAttributes<HTMLAnchorElement | HTMLDivElement> {
   children?: ReactNode;
+
   href?: string;
 }
 
-interface NavbarNavProps extends ComponentProps<'div'> {
-  children?: ReactNode;
-
+interface NavbarNavProps extends HTMLAttributes<HTMLDivElement> {
   alignment?: 'left' | 'right' | 'center';
 
   filled?: boolean;
