@@ -20,7 +20,6 @@ const navbarNavVariants = cva('a-navbar-nav a-inline-flex', {
     },
   },
   defaultVariants: {
-    alignment: 'left',
     filled: false,
     collapse: false,
   },

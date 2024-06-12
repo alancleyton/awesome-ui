@@ -34,7 +34,11 @@ const navbarVariants = cva(
 );
 
 /**
- * Navbar.
+ * Navbar component is used to help users navigate to other pages.
+ *
+ * Can contain links to easily access to the pages or sections.
+ *
+ * @see Docs https://alancleyton.github.io/awesome-ui/?path=/docs/components-navbar--docs
  */
 const Navbar = ({ children, variant, size, ...otherProps }: NavbarProps) => {
   const classNames = cn(
