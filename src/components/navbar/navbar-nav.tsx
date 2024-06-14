@@ -30,6 +30,7 @@ const navbarNavVariants = cva('a-navbar-nav a-inline-flex', {
  */
 const NavbarNav = ({
   children,
+  className,
   alignment,
   filled,
   collapse,
@@ -37,7 +38,7 @@ const NavbarNav = ({
 }: NavbarNavProps) => {
   const classNames = cn(
     navbarNavVariants({ alignment, filled, collapse }),
-    otherProps.className,
+    className,
   );
   return (
     <div className={classNames} {...otherProps}>
@@ -48,11 +49,12 @@ const NavbarNav = ({
 
 const NavbarNavItems = ({
   children,
+  className,
   ...otherProps
 }: HTMLAttributes<HTMLUListElement>) => {
   const classNames = cn(
     'a-navbar-nav-items a-flex a-items-center a-gap-5',
-    otherProps.className,
+    className,
   );
   return (
     <ul className={classNames} {...otherProps}>
@@ -63,9 +65,10 @@ const NavbarNavItems = ({
 
 const NavbarNavItem = ({
   children,
+  className,
   ...otherProps
 }: HTMLAttributes<HTMLLIElement>) => {
-  const classNames = cn('a-navbar-nav-item a-list-item', otherProps.className);
+  const classNames = cn('a-navbar-nav-item a-list-item', className);
   return (
     <li className={classNames} {...otherProps}>
       {children}
@@ -75,13 +78,14 @@ const NavbarNavItem = ({
 
 const NavbarNavLink = ({
   children,
+  className,
   ...otherProps
 }: LinkHTMLAttributes<HTMLAnchorElement>) => {
   const classNames = cn(
     'a-navbar-brand a-inline-block a-py-2 a-px-4',
     'a-font-sans a-font-normal a-text-gray-20 hover:a-text-white',
     'a-duration-300 a-ease-in-out a-cursor-pointer',
-    otherProps.className,
+    className,
   );
 
   return (

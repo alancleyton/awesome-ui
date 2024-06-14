@@ -21,12 +21,24 @@ describe('navbar nav', () => {
     expect(navbarNav).toBeInTheDocument();
   });
 
-  it('should render with default class name', () => {
+  it('should render with default classname', () => {
     render(<NavbarNav data-testid="navbar-nav">Nav</NavbarNav>);
 
     const navbarNav = screen.getByTestId('navbar-nav');
 
     expect(navbarNav).toHaveClass('a-navbar-nav');
+  });
+
+  it('should render with default and provided classnames', () => {
+    render(
+      <NavbarNav data-testid="navbar-nav" className="a-block">
+        Nav
+      </NavbarNav>,
+    );
+
+    const navbarNav = screen.getByTestId('navbar-nav');
+
+    expect(navbarNav).toHaveClass('a-navbar-nav a-block');
   });
 
   it('should render navbar nav with items', () => {
