@@ -10,18 +10,57 @@ Awesome Navbar, used to help users navigate to other pages. Can contain links to
 
 ## Table of Contents
 
+- [Properties](#properties)
 - [Usage](#usage)
+- [Collapse](#collapse)
 - [Color variants](#color-variants)
 - [Items placement](#items-placement)
-- [Collapsible Items](#collapsible-items)
-- [Properties](#properties)
+
+## Properties
+
+- **`<Navbar>`** properties:
+
+<Markdown>
+{`
+| prop | type | default | description 
+|----------|----------|----------|
+| variant | string | 'primary' | Applies background color to the navbar. Available variants: 'primary', 'secondary'.
+| size    | string | 'md'      | Applies the size of the navbar. Available sizes: 'sm', 'md', 'lg'.
+`}
+</Markdown>
+
+- **`<Navbar.Toggler>`** properties:
+
+<Markdown>
+{`
+| prop | type | default | description 
+|----------|----------|----------|
+| alignment | string  | 'left' | Determines the horizontal position of the navigation toggler. Available alignments: 'left', 'right', 'center'.
+`}
+</Markdown>
+
+- **`<Navbar.Nav>`** properties:
+
+<Markdown>
+{`
+| prop | type | default | description 
+|----------|----------|----------|
+| alignment | string  | 'left' | Determines the horizontal position of the navigation items. Available alignments: 'left', 'right', 'center'.
+| filled    | boolean | false  | Applies 100% to the navbar width. 
+| collapse  | boolean | false  | Hide items for small screens and show them on the desktop screen.
+`}
+</Markdown>
 
 ## Usage
 
-The `<Navbar>` component is composed by others components to compose the navigation bar. Use the `<Navbar.Brand>`, `<Navbar.Nav>`,
-`<Navbar.NavItems>`, `<Navbar.NavItem>` and `<Navbar.NavLink>` components.
+The `<Navbar>` component is composed by others components to compose the navigation bar. Use the `<Navbar.Brand>`, `<Navbar.Toggler>`,
+`<Navbar.TogglerBurger>`, `<Navbar.Nav>`, `<Navbar.NavItems>`, `<Navbar.NavItem>` and `<Navbar.NavLink>` components.
+
+Available composable components in the Navbar component:
 - The `<Navbar>` is a wrapper to composed components.
 - The `<Navbar.Brand>` component renders a `<div>` by default, to use as a link, set the `href` prop.
+- The `<Navbar.Toggler>` is a button that shows up when the screen size is small, and the navigation links are often hidden.
+- The `<Navbar.TogglerBurger>` is a toggler button burger icon.
 - The `<Navbar.Nav>` is a content wrapper that can be horizontal positioned into the navbar.
 - The `<Navbar.NavItems>` is a list for the navigation items.
 - The `<Navbar.NavItems>` is a item of the navigation items.
@@ -39,7 +78,8 @@ const BasicNavbarExample = () => (
     <Navbar.Brand className="text-white font-semibold text-lg">
       NavBar
     </Navbar.Brand>
-    <Navbar.Nav>
+    <Navbar.Toggler alignment="right" />
+    <Navbar.Nav collapse>
       <Navbar.NavItems>
         <Navbar.NavItem>
           <Navbar.NavLink href="#">Home</Navbar.NavLink>
@@ -59,6 +99,12 @@ const BasicNavbarExample = () => (
 );
 `} />
 
+## Collapse
+
+The `<Navbar.Nav>` component has the `collapse` prop, which is used for responsive behaviors.
+Hide large amount of items for small screens and show them on the desktop screen by setting the collapse prop.
+The default collapse prop value is `false`.
+
 ## Color variants
 
 Navbar can have different background color variants by setting the `variant` prop. The default variant is `primary`
@@ -75,7 +121,8 @@ const BasicNavbarExample = () => (
     <Navbar.Brand className="text-white font-semibold text-lg">
       NavBar
     </Navbar.Brand>
-    <Navbar.Nav>
+    <Navbar.Toggler alignment="right" />
+    <Navbar.Nav collapse>
       <Navbar.NavItems>
         <Navbar.NavItem>
           <Navbar.NavLink href="#">Home</Navbar.NavLink>
@@ -107,7 +154,8 @@ const BasicNavbarExample = () => (
     <Navbar.Brand className="text-white font-semibold text-lg">
       NavBar
     </Navbar.Brand>
-    <Navbar.Nav>
+    <Navbar.Toggler alignment="right" />
+    <Navbar.Nav collapse>
       <Navbar.NavItems>
         <Navbar.NavItem>
           <Navbar.NavLink href="#">Home</Navbar.NavLink>
@@ -144,7 +192,8 @@ const BasicNavbarExample = () => (
     <Navbar.Brand className="text-white font-semibold text-lg">
       NavBar
     </Navbar.Brand>
-    <Navbar.Nav alignment="right">
+    <Navbar.Toggler alignment="right" />
+    <Navbar.Nav alignment="right" collapse>
       <Navbar.NavItems>
         <Navbar.NavItem>
           <Navbar.NavLink href="#">Home</Navbar.NavLink>
@@ -177,7 +226,8 @@ const BasicNavbarExample = () => (
     <Navbar.Brand className="text-white font-semibold text-lg">
       NavBar
     </Navbar.Brand>
-    <Navbar.Nav alignment="center">
+    <Navbar.Toggler alignment="right" />
+    <Navbar.Nav alignment="center" collapse>
       <Navbar.NavItems>
         <Navbar.NavItem>
           <Navbar.NavLink href="#">Home</Navbar.NavLink>
@@ -210,7 +260,8 @@ const BasicNavbarExample = () => (
     <Navbar.Brand className="text-white font-semibold text-lg">
       NavBar
     </Navbar.Brand>
-    <Navbar.Nav alignment="left">
+    <Navbar.Toggler alignment="right" />
+    <Navbar.Nav alignment="left" collapse>
       <Navbar.NavItems>
         <Navbar.NavItem>
           <Navbar.NavLink href="#">Home</Navbar.NavLink>
@@ -230,66 +281,3 @@ const BasicNavbarExample = () => (
 );
 `} />
 
-## Collapsible Items
-
-The `<Navbar.Nav>` component has the `collapse` prop, which is used for responsive behaviors.
-Hide large amount of items for small screens and show them on the desktop screen by setting the collapse prop.
-The default collapse prop value is `false`.
-
-<div class="custom-canvas">
-  <Story of={NavbarStories.NavbarCollapse} />
-</div>
-
-<Source dark code={`
-import { Navbar, Button } from '@alancleyton67/awesome-ui';
-
-const BasicNavbarExample = () => (
-  <Navbar>
-    <Navbar.Brand className="text-white font-semibold text-lg">
-      NavBar
-    </Navbar.Brand>
-    <Navbar.Nav alignment="left" collapse>
-      <Navbar.NavItems>
-        <Navbar.NavItem>
-          <Navbar.NavLink href="#">Home</Navbar.NavLink>
-        </Navbar.NavItem>
-        <Navbar.NavItem>
-          <Navbar.NavLink href="#">Features</Navbar.NavLink>
-        </Navbar.NavItem>
-        <Navbar.NavItem>
-          <Navbar.NavLink href="#">Pricing</Navbar.NavLink>
-        </Navbar.NavItem>
-      </Navbar.NavItems>
-    </Navbar.Nav>
-    <Navbar.Nav collapse>
-      <Button variant="card">Sign In</Button>
-    </Navbar.Nav>
-  </Navbar>
-);
-`} />
-
-
-## Properties
-
-- **`<Navbar>`** properties:
-
-<Markdown>
-{`
-| prop | type | default | description 
-|----------|----------|----------|
-| variant | string | 'primary' | Applies background color to the navbar. Available variants: 'primary', 'secondary'.
-| size    | string | 'md'      | Applies the size of the navbar. Available sizes: 'sm', 'md', 'lg'.
-`}
-</Markdown>
-
-- **`<Navbar.Nav>`** properties:
-
-<Markdown>
-{`
-| prop | type | default | description 
-|----------|----------|----------|
-| alignment | string  | 'left' | Determines the horizontal position of the navigation items. Available alignments: 'left', 'right', 'center'.
-| filled    | boolean | false  | Applies 100% to the navbar width. 
-| collapse  | boolean | false  | Hide items for small screens and show them on the desktop screen.
-`}
-</Markdown>

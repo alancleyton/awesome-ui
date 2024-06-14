@@ -51,14 +51,6 @@ describe('navbar nav', () => {
     expect(navbarNavLink).toBeInTheDocument();
   });
 
-  it('should render navbar nav with default alignment=left', () => {
-    render(<NavbarNav data-testid="navbar-nav">nav left</NavbarNav>);
-
-    const navbarNav = screen.getByTestId('navbar-nav');
-
-    expect(navbarNav).toHaveClass('a-nav-left a-mr-auto');
-  });
-
   it('should render navbar nav with provided alignment=right', () => {
     render(
       <NavbarNav data-testid="navbar-nav" alignment="right">

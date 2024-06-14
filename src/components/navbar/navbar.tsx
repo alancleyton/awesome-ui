@@ -3,6 +3,7 @@ import { cva } from 'class-variance-authority';
 import { cn } from '@awesome-ui/utils';
 
 import { NavbarBrand } from './navbar-brand';
+import { NavbarToggler, NavbarTogglerBurger } from './navbar-toggler';
 import {
   NavbarNav,
   NavbarNavItems,
@@ -59,6 +60,8 @@ const Navbar = ({ children, variant, size, ...otherProps }: NavbarProps) => {
 
 Navbar.displayName = 'Navbar';
 Navbar.Brand = NavbarBrand;
+Navbar.Toggler = NavbarToggler;
+Navbar.TogglerBurger = NavbarTogglerBurger;
 Navbar.Nav = NavbarNav;
 Navbar.NavItems = NavbarNavItems;
 Navbar.NavItem = NavbarNavItem;

@@ -18,6 +18,7 @@ const NavbarTemplate: Story = {
         <Navbar.Brand className="a-text-white a-font-semibold a-text-lg">
           NavBar
         </Navbar.Brand>
+        <Navbar.Toggler alignment="right" />
         <Navbar.Nav alignment={alignment} filled={filled} collapse={collapse}>
           <Navbar.NavItems>
             <Navbar.NavItem>
@@ -43,6 +44,7 @@ export const PrimaryNavbar: Story = {
   ...NavbarTemplate,
   args: {
     variant: 'primary',
+    collapse: true,
   },
 };
 
@@ -50,6 +52,7 @@ export const SecondaryNavbar: Story = {
   ...NavbarTemplate,
   args: {
     variant: 'secondary',
+    collapse: true,
   },
 };
 
@@ -57,6 +60,7 @@ export const NavbarRight: Story = {
   ...NavbarTemplate,
   args: {
     alignment: 'right',
+    collapse: true,
   },
 };
 
@@ -64,6 +68,7 @@ export const NavbarCenter: Story = {
   ...NavbarTemplate,
   args: {
     alignment: 'center',
+    collapse: true,
   },
 };
 
@@ -71,6 +76,7 @@ export const NavbarLeft: Story = {
   ...NavbarTemplate,
   args: {
     alignment: 'left',
+    collapse: true,
   },
 };
 

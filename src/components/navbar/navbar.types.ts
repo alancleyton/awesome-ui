@@ -1,7 +1,18 @@
-import { HTMLAttributes, LinkHTMLAttributes } from 'react';
+import { HTMLAttributes, HtmlHTMLAttributes, LinkHTMLAttributes } from 'react';
 
 type NavbarBrandProps = LinkHTMLAttributes<HTMLAnchorElement> &
   HTMLAttributes<HTMLDivElement>;
+
+interface NavbarTogglerProps extends HtmlHTMLAttributes<HTMLDivElement> {
+  /**
+   * Determines the horizontal position of the burger.
+   *
+   * - Available alignments: `left`, `right`, `center`
+   *
+   * @default `undefined`
+   */
+  alignment?: 'left' | 'right' | 'center';
+}
 
 interface NavbarNavProps extends HTMLAttributes<HTMLDivElement> {
   /**
@@ -15,7 +26,7 @@ interface NavbarNavProps extends HTMLAttributes<HTMLDivElement> {
   /**
    * Applies 100% to the navbar width.
    *
-   * @default `false`
+   * @default `undefined`
    */
   filled?: boolean;
   /**
@@ -45,4 +56,9 @@ interface NavbarProps extends HTMLAttributes<HTMLElement> {
   size?: 'sm' | 'md' | 'lg';
 }
 
-export type { NavbarBrandProps, NavbarNavProps, NavbarProps };
+export type {
+  NavbarBrandProps,
+  NavbarTogglerProps,
+  NavbarNavProps,
+  NavbarProps,
+};
