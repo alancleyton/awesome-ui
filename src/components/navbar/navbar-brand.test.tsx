@@ -16,12 +16,24 @@ describe('navbar brand', () => {
     expect(navbarBrand).toBeInTheDocument();
   });
 
-  it('should render with default class name', () => {
+  it('should render with default classname', () => {
     render(<NavbarBrand data-testid="navbar-brand">Logo</NavbarBrand>);
 
     const navbarBrand = screen.getByTestId('navbar-brand');
 
     expect(navbarBrand).toHaveClass('a-navbar-brand');
+  });
+
+  it('should render with default and provided classnames', () => {
+    render(
+      <NavbarBrand data-testid="navbar-brand" className="a-block">
+        Logo
+      </NavbarBrand>,
+    );
+
+    const navbarBrand = screen.getByTestId('navbar-brand');
+
+    expect(navbarBrand).toHaveClass('a-navbar-brand a-block');
   });
 
   it('should renders a div by default', () => {
