@@ -41,11 +41,14 @@ const navbarVariants = cva(
  *
  * @see Docs https://alancleyton.github.io/awesome-ui/?path=/docs/components-navbar--docs
  */
-const Navbar = ({ children, variant, size, ...otherProps }: NavbarProps) => {
-  const classNames = cn(
-    navbarVariants({ variant, size }),
-    otherProps.className,
-  );
+const Navbar = ({
+  children,
+  className,
+  variant,
+  size,
+  ...otherProps
+}: NavbarProps) => {
+  const classNames = cn(navbarVariants({ variant, size }), className);
   return (
     <nav
       className={classNames}

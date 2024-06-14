@@ -26,12 +26,24 @@ describe('navbar', () => {
     expect(await axe(navbar)).toHaveNoViolations();
   });
 
-  it('should render with default class name', () => {
+  it('should render with default classname', () => {
     render(<Navbar data-testid="navbar">navbar</Navbar>);
 
     const navbar = screen.getByTestId('navbar');
 
     expect(navbar).toHaveClass('a-navbar');
+  });
+
+  it('should render with default and provided classname', () => {
+    render(
+      <Navbar data-testid="navbar" className="a-block">
+        navbar
+      </Navbar>,
+    );
+
+    const navbar = screen.getByTestId('navbar');
+
+    expect(navbar).toHaveClass('a-navbar a-block');
   });
 
   it('should render with default variant=primary', () => {
