@@ -9,6 +9,16 @@ export default {
 
 type Story = StoryObj<InputControlProps>;
 
+const InputTemplate: Story = {
+  render: ({ placeholder, size }) => {
+    return (
+      <Input.Group>
+        <Input.Control size={size} placeholder={placeholder} />
+      </Input.Group>
+    );
+  },
+};
+
 export const DefaultInputControl: Story = {
   args: {
     placeholder: 'Basic input control',
@@ -82,5 +92,12 @@ export const DisabledInputControl: Story = {
   args: {
     disabled: true,
     placeholder: 'Disabled input control',
+  },
+};
+
+export const InputGroup: Story = {
+  ...InputTemplate,
+  args: {
+    placeholder: 'Input group',
   },
 };
