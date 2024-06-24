@@ -7,32 +7,11 @@ import { cva } from 'class-variance-authority';
 
 import { cn } from '@awesome-ui/utils';
 
+import { useInputContext } from './input-root';
+
 export type RemovedProps = 'size';
 export type InputControlRef = ForwardedRef<HTMLInputElement>;
-export interface InputControlProps extends Omit<AriaInputProps, RemovedProps> {
-  /**
-   * Applies the size of the input.
-   *
-   * - Available sizes: `sm`, `md`, `lg`
-   *
-   * @default `md`
-   */
-  size?: 'sm' | 'md' | 'lg';
-  /**
-   * Applies 100% to the input width.
-   *
-   * @default `false`
-   */
-  isFull?: boolean;
-  /**
-   * Applies color variant to the input.
-   *
-   * - Available variants: `primary`, `secondary`, `info`, `danger`, `success`
-   *
-   * @default `secondary`
-   */
-  variant?: 'primary' | 'secondary' | 'info' | 'danger' | 'success';
-}
+export interface InputControlProps extends Omit<AriaInputProps, RemovedProps> {}
 
 const inputControlVariants = cva(
   cn(
@@ -78,7 +57,8 @@ const inputControlVariants = cva(
 
 export const InputControl = forwardRef(
   (props: InputControlProps, ref: InputControlRef) => {
-    const { type, size, isFull, variant, className, ...otherProps } = props;
+    const { type, className, ...otherProps } = props;
+    const { size, isFull, variant } = useInputContext();
     const classNames = cn(
       inputControlVariants({ size, isFull, variant }),
       className,

@@ -10,7 +10,7 @@ const InputGroup = ({
   return (
     <div
       className={cn(
-        'a-input-group a-flex a-relative a-h-full a-w-full',
+        'a-input-group a-flex a-relative a-h-fit a-w-fit',
         className,
       )}
       {...otherProps}
