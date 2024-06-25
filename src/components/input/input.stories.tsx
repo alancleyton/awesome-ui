@@ -1,19 +1,42 @@
+import { ReactNode } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Input, InputRootProps, InputFieldProps } from '.';
+import { Input, InputRootProps, InputFieldProps, InputGroupProps } from '.';
 
 export default {
   title: 'Components/Input',
   component: Input.Root,
 } as Meta<InputRootProps>;
 
-type Story = StoryObj<InputRootProps & InputFieldProps>;
+type InputTemplateProps = {
+  addonLeftContent?: string | ReactNode;
+  addonRightContent?: string | ReactNode;
+};
+type Story = StoryObj<
+  InputRootProps & InputFieldProps & InputGroupProps & InputTemplateProps
+>;
 
 const InputTemplate: Story = {
-  render: ({ size, isFull, variant, placeholder, disabled }) => {
+  render: ({
+    size,
+    isFull,
+    variant,
+    placeholder,
+    disabled,
+    addonLeft,
+    addonLeftContent,
+    addonRight,
+    addonRightContent,
+  }) => {
     return (
       <Input.Root size={size} variant={variant} isFull={isFull}>
-        <Input.Field placeholder={placeholder} disabled={disabled} />
+        <Input.Group addonLeft={addonLeft} addonRight={addonRight}>
+          {addonLeft && <Input.LeftAddon>{addonLeftContent}</Input.LeftAddon>}
+          <Input.Field placeholder={placeholder} disabled={disabled} />
+          {addonRight && (
+            <Input.RightAddon>{addonRightContent}</Input.RightAddon>
+          )}
+        </Input.Group>
       </Input.Root>
     );
   },
@@ -103,5 +126,23 @@ export const DisabledInput: Story = {
   args: {
     disabled: true,
     placeholder: 'Disabled input',
+  },
+};
+
+export const LeftAddonInput: Story = {
+  ...InputTemplate,
+  args: {
+    addonLeft: true,
+    addonLeftContent: '@',
+    placeholder: 'Addon left input',
+  },
+};
+
+export const RightAddonInput: Story = {
+  ...InputTemplate,
+  args: {
+    addonRight: true,
+    addonRightContent: '@',
+    placeholder: 'Addon right input',
   },
 };

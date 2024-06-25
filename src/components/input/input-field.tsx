@@ -8,6 +8,7 @@ import { cva } from 'class-variance-authority';
 import { cn } from '@awesome-ui/utils';
 
 import { useInputContext } from './input-root';
+import { useInputGroupContext } from './input-group';
 
 export type RemovedProps = 'size';
 export type InputFieldRef = ForwardedRef<HTMLInputElement>;
@@ -58,16 +59,18 @@ const inputFieldVariants = cva(
 export const InputField = forwardRef(
   (props: InputFieldProps, ref: InputFieldRef) => {
     const { type, className, ...otherProps } = props;
-
     const { size, isFull, variant } = useInputContext();
+    const { addonRight, addonLeft } = useInputGroupContext();
 
-    const classNames = cn(
+    const classes = cn(
       inputFieldVariants({ size, isFull, variant }),
+      addonRight && 'a-rounded-e-none',
+      addonLeft && 'a-rounded-s-none',
       className,
     );
 
     return (
-      <AriaInput ref={ref} type={type} className={classNames} {...otherProps} />
+      <AriaInput ref={ref} type={type} className={classes} {...otherProps} />
     );
   },
 );
