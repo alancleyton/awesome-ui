@@ -1,11 +1,11 @@
 import { memo } from 'react';
 
 import { InputRoot } from './input-root';
-import { InputControl } from './input-control';
+import { InputField } from './input-field';
 import { InputGroup } from './input-group';
 
 export default {
   Root: memo(InputRoot),
-  Control: memo(InputControl),
+  Field: memo(InputField),
   Group: memo(InputGroup),
 };

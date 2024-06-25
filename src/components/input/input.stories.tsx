@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Input, InputRootProps, InputControlProps } from '.';
+import { Input, InputRootProps, InputFieldProps } from '.';
 
 export default {
   title: 'Components/Input',
   component: Input.Root,
 } as Meta<InputRootProps>;
 
-type Story = StoryObj<InputRootProps & InputControlProps>;
+type Story = StoryObj<InputRootProps & InputFieldProps>;
 
 const InputTemplate: Story = {
   render: ({ size, isFull, variant, placeholder, disabled }) => {
     return (
       <Input.Root size={size} variant={variant} isFull={isFull}>
-        <Input.Control placeholder={placeholder} disabled={disabled} />
+        <Input.Field placeholder={placeholder} disabled={disabled} />
       </Input.Root>
     );
   },
@@ -30,7 +30,7 @@ export const SmallInput: Story = {
   ...InputTemplate,
   args: {
     size: 'sm',
-    placeholder: 'Small input control',
+    placeholder: 'Small input',
   },
 };
 

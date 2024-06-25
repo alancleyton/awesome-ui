@@ -10,12 +10,12 @@ import { cn } from '@awesome-ui/utils';
 import { useInputContext } from './input-root';
 
 export type RemovedProps = 'size';
-export type InputControlRef = ForwardedRef<HTMLInputElement>;
-export interface InputControlProps extends Omit<AriaInputProps, RemovedProps> {}
+export type InputFieldRef = ForwardedRef<HTMLInputElement>;
+export interface InputFieldProps extends Omit<AriaInputProps, RemovedProps> {}
 
-const inputControlVariants = cva(
+const inputFieldVariants = cva(
   cn(
-    'a-input-control a-inline-flex a-font-sans a-font-normal a-text-gray-90 placeholder:text-gray-60 a-text-ellipsis a-leading-body',
+    'a-input-field a-inline-flex a-font-sans a-font-normal a-text-gray-90 placeholder:text-gray-60 a-text-ellipsis a-leading-body',
     'a-transition a-duration-300 a-ease-in-out a-outline-none a-rounded-sm a-ring-1 enabled:hover:a-ring-2',
     'disabled:a-text-gray-30 disabled:a-ring-gray-10 disabled:a-cursor-not-allowed',
   ),
@@ -23,28 +23,28 @@ const inputControlVariants = cva(
     variants: {
       variant: {
         primary: cn(
-          'a-input-control-primary a-ring-blue-20 enabled:hover:a-ring-blue enabled:focus:a-ring-2 enabled:focus:a-ring-blue',
+          'a-input-field-primary a-ring-blue-20 enabled:hover:a-ring-blue enabled:focus:a-ring-2 enabled:focus:a-ring-blue',
         ),
         secondary: cn(
           'a-input-secondary a-ring-gray-20 enabled:hover:a-ring-gray enabled:focus:a-ring-2 enabled:focus:a-ring-gray',
         ),
         info: cn(
-          'a-input-control-info a-ring-yellow-20 enabled:hover:a-ring-yellow enabled:focus:a-ring-2 enabled:focus:a-ring-yellow',
+          'a-input-field-info a-ring-yellow-20 enabled:hover:a-ring-yellow enabled:focus:a-ring-2 enabled:focus:a-ring-yellow',
         ),
         danger: cn(
-          'a-input-control-danger a-ring-red-20 enabled:hover:a-ring-red enabled:focus:a-ring-2 enabled:focus:a-ring-red',
+          'a-input-field-danger a-ring-red-20 enabled:hover:a-ring-red enabled:focus:a-ring-2 enabled:focus:a-ring-red',
         ),
         success: cn(
-          'a-input-control-success a-ring-green-20 enabled:hover:a-ring-green enabled:focus:a-ring-2 enabled:focus:a-ring-green',
+          'a-input-field-success a-ring-green-20 enabled:hover:a-ring-green enabled:focus:a-ring-2 enabled:focus:a-ring-green',
         ),
       },
       size: {
-        sm: 'a-input-control-sm a-h-7 a-py-2 a-px-4 a-text-sm',
-        md: 'a-input-control-md a-h-8 a-py-3 a-px-5 a-text-md',
-        lg: 'a-input-control-lg a-h-9 a-py-4 a-px-6 a-text-lg',
+        sm: 'a-input-field-sm a-h-7 a-py-2 a-px-4 a-text-sm',
+        md: 'a-input-field-md a-h-8 a-py-3 a-px-5 a-text-md',
+        lg: 'a-input-field-lg a-h-9 a-py-4 a-px-6 a-text-lg',
       },
       isFull: {
-        true: 'a-input-control-full a-w-full',
+        true: 'a-input-field-full a-w-full',
       },
     },
     defaultVariants: {
@@ -55,18 +55,21 @@ const inputControlVariants = cva(
   },
 );
 
-export const InputControl = forwardRef(
-  (props: InputControlProps, ref: InputControlRef) => {
+export const InputField = forwardRef(
+  (props: InputFieldProps, ref: InputFieldRef) => {
     const { type, className, ...otherProps } = props;
+
     const { size, isFull, variant } = useInputContext();
+
     const classNames = cn(
-      inputControlVariants({ size, isFull, variant }),
+      inputFieldVariants({ size, isFull, variant }),
       className,
     );
+
     return (
       <AriaInput ref={ref} type={type} className={classNames} {...otherProps} />
     );
   },
 );
 
-InputControl.displayName = 'InputControl';
+InputField.displayName = 'InputField';
