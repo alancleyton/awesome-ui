@@ -56,16 +56,33 @@ const inputFieldVariants = cva(
   },
 );
 
+const ELEMENT_LEFT_SIZES = {
+  sm: 'a-pl-7',
+  md: 'a-pl-8',
+  lg: 'a-pl-9',
+};
+
+const ELEMENT_RIGHT_SIZES = {
+  sm: 'a-pr-7',
+  md: 'a-pr-8',
+  lg: 'a-pr-9',
+};
+
 export const InputField = forwardRef(
   (props: InputFieldProps, ref: InputFieldRef) => {
     const { type, className, ...otherProps } = props;
     const { size, isFull, variant } = useInputContext();
-    const { addonRight, addonLeft } = useInputGroupContext();
+    const { addonRight, addonLeft, elementRight, elementLeft } =
+      useInputGroupContext();
+
+    const ELEMENT_SIZE_INDEX = size ? size : 'md';
 
     const classes = cn(
       inputFieldVariants({ size, isFull, variant }),
       addonRight && 'a-rounded-e-none',
       addonLeft && 'a-rounded-s-none',
+      elementRight && ELEMENT_RIGHT_SIZES[ELEMENT_SIZE_INDEX],
+      elementLeft && ELEMENT_LEFT_SIZES[ELEMENT_SIZE_INDEX],
       className,
     );
 

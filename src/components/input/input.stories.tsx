@@ -11,6 +11,8 @@ export default {
 type InputTemplateProps = {
   addonLeftContent?: string | ReactNode;
   addonRightContent?: string | ReactNode;
+  elementRightContent?: string | ReactNode;
+  elementLeftContent?: string | ReactNode;
 };
 type Story = StoryObj<
   InputRootProps & InputFieldProps & InputGroupProps & InputTemplateProps
@@ -27,14 +29,29 @@ const InputTemplate: Story = {
     addonLeftContent,
     addonRight,
     addonRightContent,
+    elementLeft,
+    elementLeftContent,
+    elementRight,
+    elementRightContent,
   }) => {
     return (
       <Input.Root size={size} variant={variant} isFull={isFull}>
-        <Input.Group addonLeft={addonLeft} addonRight={addonRight}>
+        <Input.Group
+          addonLeft={addonLeft}
+          addonRight={addonRight}
+          elementLeft={elementLeft}
+          elementRight={elementRight}
+        >
+          {elementLeft && (
+            <Input.LeftElement>{elementLeftContent}</Input.LeftElement>
+          )}
           {addonLeft && <Input.LeftAddon>{addonLeftContent}</Input.LeftAddon>}
           <Input.Field placeholder={placeholder} disabled={disabled} />
           {addonRight && (
             <Input.RightAddon>{addonRightContent}</Input.RightAddon>
+          )}
+          {elementRight && (
+            <Input.RightElement>{elementRightContent}</Input.RightElement>
           )}
         </Input.Group>
       </Input.Root>
@@ -144,5 +161,23 @@ export const RightAddonInput: Story = {
     addonRight: true,
     addonRightContent: '@',
     placeholder: 'Addon right input',
+  },
+};
+
+export const LeftElementInput: Story = {
+  ...InputTemplate,
+  args: {
+    elementLeft: true,
+    elementLeftContent: '@',
+    placeholder: 'Element left input',
+  },
+};
+
+export const RightElementInput: Story = {
+  ...InputTemplate,
+  args: {
+    elementRight: true,
+    elementRightContent: '@',
+    placeholder: 'Element right input',
   },
 };
