@@ -27,7 +27,7 @@ const inputFieldVariants = cva(
           'a-input-field-primary a-ring-blue-20 enabled:hover:a-ring-blue enabled:focus:a-ring-2 enabled:focus:a-ring-blue',
         ),
         secondary: cn(
-          'a-input-secondary a-ring-gray-20 enabled:hover:a-ring-gray enabled:focus:a-ring-2 enabled:focus:a-ring-gray',
+          'a-input-field-secondary a-ring-gray-20 enabled:hover:a-ring-gray enabled:focus:a-ring-2 enabled:focus:a-ring-gray',
         ),
         info: cn(
           'a-input-field-info a-ring-yellow-20 enabled:hover:a-ring-yellow enabled:focus:a-ring-2 enabled:focus:a-ring-yellow',

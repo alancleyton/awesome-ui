@@ -39,10 +39,13 @@ export const InputRoot = ({
   size,
   isFull,
   variant,
+  ...otherProps
 }: InputRootProps & { children?: ReactNode }) => {
   return (
     <InputContext.Provider value={{ size, isFull, variant }}>
-      {children}
+      <div className="a-input" {...otherProps}>
+        {children}
+      </div>
     </InputContext.Provider>
   );
 };
