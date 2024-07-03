@@ -1,0 +1,214 @@
+import { Meta, Story, Source, Controls, Markdown } from '@storybook/blocks';
+import * as InputStories from './input.stories';
+import { Input } from '.'
+
+<Meta title="Input docs" of={InputStories} />
+
+# Input
+
+Awesome Input, used to get data from the user and create forms.
+
+
+### Table of Contents
+
+- [Import](#import)
+- [Usage](#usage)
+- [Variants](#variants)
+- [Sizes](#sizes)
+- [Width](#width)
+- [Disabled](#disabled)
+- [Addons and Elements](#addons-and-elements)
+- [Properties](#properties)
+
+### Import
+
+<Source dark code={`
+import { Input } from '@alancleyton67/awesome-ui';
+`} />
+
+### Usage
+
+Example of the `<Input>` component:
+
+<div class="custom-canvas">
+  <Story of={InputStories.DefaultInput} />
+</div>
+
+<Source dark code={`
+<Input.Root>
+  <Input.Field placeholder='Basic input' />
+</Input.Root>
+`} />
+
+### Variants
+
+The `<Input>` component can have different variant colors by setting the `variant` prop in `<Input.Root>`.
+
+<div class="custom-canvas columns">
+  <Story of={InputStories.PrimaryInput} />
+  <Story of={InputStories.SecondaryInput} />
+  <Story of={InputStories.InfoInput} />
+  <Story of={InputStories.DangerInput} />
+  <Story of={InputStories.SuccessInput} />
+</div>
+
+<Source dark code={`
+<Input.Root variant="primary">
+  <Input.Field placeholder='Primary input' />
+</Input.Root>
+
+<Input.Root variant="secondary">
+  <Input.Field placeholder='Secondary input' />
+</Input.Root>
+
+<Input.Root variant="info">
+  <Input.Field placeholder='Info input' />
+</Input.Root>
+
+<Input.Root variant="danger">
+  <Input.Field placeholder='Danger input' />
+</Input.Root>
+
+<Input.Root variant="success">
+  <Input.Field placeholder='Success input' />
+</Input.Root>
+`} />
+
+### Sizes
+
+The `<Input>` component can have different sizes by setting the `size` prop in `<Input.Root>`.
+
+<div class="custom-canvas columns">
+  <Story of={InputStories.SmallInput} />
+  <Story of={InputStories.MediumInput} />
+  <Story of={InputStories.LargeInput} />
+</div>
+
+<Source dark code={`
+<Input.Root size="sm">
+  <Input.Field placeholder='Small input' />
+</Input.Root>
+
+<Input.Root size="md">
+  <Input.Field placeholder='Medium input' />
+</Input.Root>
+
+<Input.Root size="lg">
+  <Input.Field placeholder='Large input' />
+</Input.Root>
+`} />
+
+### Width
+
+Create full width inputs by setting the `isFull` prop in `<Input.Root>`.
+The default width of the `<Input>` is `auto`.
+
+<div class="custom-canvas">
+  <Story of={InputStories.FullWidthInput} />
+</div>
+
+<Source dark code={`
+<Input.Root isFull>
+  <Input.Field placeholder='Full input' />
+</Input.Root>
+`} />
+
+### Disabled
+
+Specifies a non interactive input by setting `disabled` prop in `<Input.Field>`.
+
+<div class="custom-canvas">
+  <Story of={InputStories.DisabledInput} />
+</div>
+
+<Source dark code={`
+<Input.Root>
+  <Input.Field placeholder='Disabled input' disabled />
+</Input.Root>
+`} />
+
+### Addons and Elements
+
+Add addons and elements to the left and right of the `<Input>` component.
+You can use the `<Input.RightAddon>`, `<Input.LeftAddon>`, `<Input.RightElement>`, `<Input.LeftElement>`
+with the `<Input.Group>` to help with addons and elements position.
+
+<div class="custom-canvas">
+  <Story of={InputStories.RightAddonInput} />
+</div>
+
+<Source dark code={`
+<Input.Root>
+  <Input.Group addonRight>
+    <Input.Field placeholder='Addon right input' />
+    <Input.RightAddon>@</Input.RightAddon>
+  </Input.Group>
+</Input.Root>
+`} />
+
+<div class="custom-canvas">
+  <Story of={InputStories.LeftAddonInput} />
+</div>
+
+<Source dark code={`
+<Input.Root>
+  <Input.Group addonLeft>
+    <Input.LeftAddon>@</Input.LeftAddon>
+    <Input.Field placeholder='Addon left input' />
+  </Input.Group>
+</Input.Root>
+`} />
+
+<div class="custom-canvas">
+  <Story of={InputStories.RightElementInput} />
+</div>
+
+<Source dark code={`
+<Input.Root>
+  <Input.Group elementRight>
+    <Input.Field placeholder='Element right input' />
+    <Input.RightElement>@</Input.RightElement>
+  </Input.Group>
+</Input.Root>
+`} />
+
+<div class="custom-canvas">
+  <Story of={InputStories.LeftElementInput} />
+</div>
+
+<Source dark code={`
+<Input.Root>
+  <Input.Group elementLeft>
+    <Input.LeftElement>@</Input.LeftElement>
+    <Input.Field placeholder='Element left input' />
+  </Input.Group>
+</Input.Root>
+`} />
+
+### Properties
+
+- **`<Input.Root>`** properties:
+
+<Markdown>
+{`
+| prop     | type     | default     | description 
+|----------|----------|-------------|
+| variant  | string   | 'secondary' | Applies color variant to the input. Available variants: 'primary', 'secondary', 'info', 'danger', 'success'.
+| size     | string   | 'md'        | Applies the size of the input. Available sizes: 'sm', 'md', 'lg'.
+| isFull   | boolean  | false       | Applies 100% to the input width.
+`}
+</Markdown>
+
+- **`<Input.Group>`** properties:
+
+<Markdown>
+{`
+| prop         | type    | default | description 
+|--------------|---------|---------|
+| addonRight   | boolean | false   | Applies the right addon to the input field.
+| addonleft    | boolean | false   | Applies the left addon to the input field.
+| elementRight | boolean | false   | Applies the right element to the input field.
+| elementLeft  | boolean | false   | Applies the left element to the input field.
+
+`}
+</Markdown>
