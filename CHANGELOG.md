@@ -1,3 +1,7 @@
+## [0.7.2](https://github.com/alancleyton/awesome-ui/compare/v0.7.1...v0.7.2) (2024-07-09)
+
+
+
 ## [0.7.1](https://github.com/alancleyton/awesome-ui/compare/v0.7.0...v0.7.1) (2024-07-03)
 
 
@@ -40,10 +44,6 @@
 * add navbar-brand component ([8321371](https://github.com/alancleyton/awesome-ui/commit/8321371073760a9434e8a9ce9bca5e0dba04d0f6))
 * export components ([1ad3153](https://github.com/alancleyton/awesome-ui/commit/1ad3153853476831c910e1d9c4fa7001ea590c13))
 * **Navbar:** add toggler component ([0f5beea](https://github.com/alancleyton/awesome-ui/commit/0f5beeadcd61a974d64b3bf4a55f249a9afe92e2))
-
-
-
-## [0.5.1](https://github.com/alancleyton/awesome-ui/compare/v0.5.0...v0.5.1) (2024-05-24)
 
 
 
