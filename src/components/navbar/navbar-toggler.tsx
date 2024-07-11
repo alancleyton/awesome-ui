@@ -3,7 +3,16 @@ import { cva } from 'class-variance-authority';
 
 import { cn } from '@awesome-ui/utils';
 
-import { NavbarTogglerProps } from '.';
+export interface NavbarTogglerProps extends HTMLAttributes<HTMLDivElement> {
+  /**
+   * Determines the horizontal position of the burger.
+   *
+   * - Available alignments: `left`, `right`, `center`
+   *
+   * @default `undefined`
+   */
+  alignment?: 'left' | 'right' | 'center';
+}
 
 const navbarTogglerVariants = cva('a-navbar-toggler tablet-sm:a-hidden', {
   variants: {
