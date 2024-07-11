@@ -41,6 +41,7 @@ button.sidebar-item.sidebar-item {
 /* Custom classes */
 .custom-canvas {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
   position: relative;
   padding: 30px 20px;
@@ -53,11 +54,10 @@ button.sidebar-item.sidebar-item {
   flex-direction: column;
 }
 
+.custom-canvas.full > .sb-story {
+  width: 100%;
+}
 
 .docblock-source {
   margin-top: -5px !important;
-}
-
-.sb-story {
-  width: 100%;
 }
