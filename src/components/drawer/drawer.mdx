@@ -1,12 +1,20 @@
-import { Canvas, Meta, Story, Source, Controls } from '@storybook/blocks';
+import { Canvas, Meta, Story, Source, Controls, Markdown } from '@storybook/blocks';
 import * as DrawerStories from './drawer.stories';
 import { Drawer } from '.'
 
 <Meta title="Drawer docs" of={DrawerStories} />
 
-# Overview
+# Drawer
 
 Awesome Drawer, used to provide navigation to other pages, can contain different kinds of content or small interactions.
+
+### Table of Contents
+
+- [Import](#import)
+- [Usage](#usage)
+- [Placement](#placement)
+- [Sizes](#sizes)
+- [Properties](#properties)
 
 ### Import
 
@@ -16,6 +24,9 @@ import { Drawer } from '@alancleyton67/awesome-ui';
 `} />
 
 ### Usage
+
+Example of the `<Drawer>` component:
+
 <div class="custom-canvas">
   <Story of={DrawerStories.DrawerLeft} />
 </div>
@@ -28,19 +39,19 @@ const BasicDrawerExample = () => {
 
   <>
     <Button onPress={openDrawer}>open</Button>
-    <Drawer open={isOpen} onClose={closeDrawer}>
+    <Drawer.Root open={isOpen} onClose={closeDrawer}>
       <Drawer.Content>
         <div className="p-5 h-full bg-white">
           <p>left</p>
           <Button onPress={handleCloseDrawer}>close drawer</Button>
         </div>
       </Drawer.Content>
-    </Drawer>
+    </Drawer.root>
   </>
 };
 `} />
 
-### Drawer placement
+### Placement
 
 The Drawer component sits off-screen until triggered by the user, it can appear from any corner of the side.
 Use the `placement` prop to specify which side of the screen the Drawer should appears.
@@ -79,19 +90,19 @@ const DrawerPlacementsExample = () => {
         </Button>
     ))};
 
-    <Drawer placement={placement} open={isOpen} onClose={closeDrawer}>
+    <Drawer.Root placement={placement} open={isOpen} onClose={closeDrawer}>
       <Drawer.Content>
         <div className="p-5 h-full bg-white">
           <p>drawer content</p>
           <Button onPress={handleCloseDrawer}>close drawer</Button>
         </div>
       </Drawer.Content>
-    </Drawer>
+    </Drawer.Root>
   </>
 };
 `} />
 
-### Drawer sizes
+### Sizes
 
 Drawer content panel can have different sizes by setting the `size` prop.
 The size prop can receive `sm`, `md`, `lg` and `full` values. The default size is `md`.
@@ -129,19 +140,29 @@ const DrawerSizesExample = () => {
         </Button>
     ))};
 
-    <Drawer size={size} open={isOpen} onClose={closeDrawer}>
+    <Drawer.Root size={size} open={isOpen} onClose={closeDrawer}>
       <Drawer.Content>
         <div className="p-5 h-full bg-white">
           <p>drawer content</p>
           <Button onPress={handleCloseDrawer}>close drawer</Button>
         </div>
       </Drawer.Content>
-    </Drawer>
+    </Drawer.Root>
   </>
 };
 `} />
 
 
-### Drawer Properties
+### Properties
 
-<Controls of={DrawerStories.DrawerLeft} />
+- **`<Drawer.Root>`** properties:
+
+<Markdown>
+{`
+| prop    | type     | default    | description 
+|---------|----------|------------|
+| open    | boolean  | false      | If true, the drawer is shown.
+| onClose | function | () => null | Callback used to close the drawer.
+| size    | string   | 'md'       | Applies the size of the drawer panel.
+`}
+</Markdown>

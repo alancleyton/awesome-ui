@@ -3,14 +3,14 @@ import { useArgs } from '@storybook/store';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '@awesome-ui/components/button';
-import { Drawer, DrawerProps } from '.';
+import { Drawer, DrawerRootProps } from '.';
 
 export default {
   title: 'Components/Drawer',
-  component: Drawer,
-} as Meta<DrawerProps>;
+  component: Drawer.Root,
+} as Meta<DrawerRootProps>;
 
-type Story = StoryObj<DrawerProps & { label?: string }>;
+type Story = StoryObj<DrawerRootProps & { label?: string }>;
 
 const DrawerTemplate: Story = {
   render: ({ open, placement, size, label }) => {
@@ -21,7 +21,7 @@ const DrawerTemplate: Story = {
     return (
       <div>
         <Button onPress={handleOpenDrawer}>{label}</Button>
-        <Drawer
+        <Drawer.Root
           open={open}
           placement={placement}
           size={size}
@@ -33,7 +33,7 @@ const DrawerTemplate: Story = {
               <Button onPress={handleCloseDrawer}>close drawer</Button>
             </div>
           </Drawer.Content>
-        </Drawer>
+        </Drawer.Root>
       </div>
     );
   },
