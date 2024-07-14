@@ -1,9 +1,8 @@
-import { useContext, MouseEvent } from 'react';
+import { useContext, MouseEvent, HTMLAttributes } from 'react';
 
 import { cn } from '@awesome-ui/utils';
 
 import { DrawerContext } from './drawer-context';
-import { DrawerContentProps } from './drawer.types';
 
 const PLACEMENT_CLASSES = {
   right: 'a-inset-y-0 a-right-0',
@@ -43,7 +42,7 @@ const PLACEMENT_X_SIZE = {
 export const DrawerContent = ({
   children,
   ...otherProps
-}: DrawerContentProps) => {
+}: HTMLAttributes<HTMLDivElement>) => {
   const { open, placement, size } = useContext(DrawerContext);
 
   const PLACEMENT = placement ? placement : 'left';

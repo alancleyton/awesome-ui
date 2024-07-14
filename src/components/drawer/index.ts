@@ -1,2 +1,2 @@
 export { default as Drawer } from './drawer';
-export type { DrawerProps } from './drawer.types';
+export type { DrawerRootProps } from './drawer-root';

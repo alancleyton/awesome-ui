@@ -1,10 +1,10 @@
-import { Canvas, Meta, Story, Source, Controls } from '@storybook/blocks';
+import { Canvas, Meta, Story, Source, Markdown } from '@storybook/blocks';
 import * as ButtonStories from './button.stories';
 import { Button } from '.'
 
 <Meta title="Button docs" of={ButtonStories} />
 
-# Overview
+# Button
 
 Awesome button, used to take actions in forms, dialogs and navigation.
 Provides seven different color variants: `primary`, `secondary`, `info`, `danger`, `success`, `ghost`, `card`.
@@ -13,11 +13,42 @@ The Button component is based on [React Aria](https://react-spectrum.adobe.com/r
 
 <br />
 
-### Primary buttons
+### Table of Contents
+
+- [Import](#import)
+- [Usage](#usage)
+- [Variants](#variants)
+- [Types](#types)
+- [Sizes](#sizes)
+- [Disabled](#disabled)
+- [Full width](#full-width)
+- [Properties](#properties)
+
+### Import
+
+<Source dark code={`
+import { Button } from '@alancleyton67/awesome-ui';
+
+`} />
+
+### Usage
+
+Example of the `<Button>` component:
+
+<div class="custom-canvas">
+  <Story of={ButtonStories.Primary} />
+</div>
+
+<Source dark code={`
+<Button>primary</Button>
+`} />
+
+
+### Variants
 
 Buttons can have different variant colors by setting the `variant` prop. The default variant is `primary`
 
-<Canvas>
+<div class="custom-canvas">
   <Story of={ButtonStories.Primary} />
   <Story of={ButtonStories.Secondary} />
   <Story of={ButtonStories.Info} />
@@ -25,38 +56,75 @@ Buttons can have different variant colors by setting the `variant` prop. The def
   <Story of={ButtonStories.Success} />
   <Story of={ButtonStories.Ghost} />
   <Story of={ButtonStories.Card} />
-</Canvas>
+</div>
 
-### Button types
+<Source dark code={`
+<Button variant="primary">primary</Button>
+<Button variant="secondary">secondary</Button>
+<Button variant="info">info</Button>
+<Button variant="danger">danger</Button>
+<Button variant="success">success</Button>
+<Button variant="ghost">ghost</Button>
+<Button variant="card">card</Button>
+`} />
+
+### Types
 
 Specifies the button type when used in an HTML form. Specify `button`, `submit` or `reset`. The default type is `button`.
 
-### Button sizes
+
+### Sizes
 
 Buttons can have different sizes by setting the `size` prop. The default size is `md`.
 
-<Canvas>
+<div class="custom-canvas">
   <Story of={ButtonStories.Small} />
   <Story of={ButtonStories.Medium} />
   <Story of={ButtonStories.Large} />
-</Canvas>
+</div>
 
-### Disabled buttons
+<Source dark code={`
+<Button size="sm">small</Button>
+<Button size="md">medium</Button>
+<Button size="lg">large</Button>
+`} />
+
+### Disabled
 
 Specifies a non interactive button with `isDisabled` prop to render a button with disabled state.
 
-<Canvas>
+<div class="custom-canvas">
   <Story of={ButtonStories.Disabled} />
-</Canvas>
+</div>
 
-### Full width buttons
+<Source dark code={`
+<Button isDisabled>disabled</Button>
+`} />
+
+### Full width
 
 Create a full width buttons by setting the `isFull` prop.
 
-<Canvas>
+<div class="custom-canvas full">
   <Story of={ButtonStories.FullWidth} />
-</Canvas>
+</div>
 
-### Button Properties
+<Source dark code={`
+<Button isFull>full button</Button>
+`} />
 
-<Controls of={ButtonStories.Primary} />
+### Properties
+
+- **`<Button>`** properties:
+
+<Markdown>
+{`
+| prop    | type     | default    | description 
+|---------|----------|------------|
+| variant | string   | 'primary'  | Applies color variant to the button. Available variants: 'primary', 'secondary', 'info', 'danger', 'success', 'ghost', 'card'.
+| size    | string   | 'md'       | Applies the size of the button. Available sizes: 'sm', 'md', 'lg'.
+| isFull  | boolean  | false      | Applies 100% to the button width.
+`}
+</Markdown>
+
+To see all button properties, see [React Aria button properties](https://react-spectrum.adobe.com/react-aria/Button.html#props).

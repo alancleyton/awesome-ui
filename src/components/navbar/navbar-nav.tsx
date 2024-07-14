@@ -3,7 +3,28 @@ import { cva } from 'class-variance-authority';
 
 import { cn } from '@awesome-ui/utils';
 
-import { NavbarNavProps } from '.';
+export interface NavbarNavProps extends HTMLAttributes<HTMLDivElement> {
+  /**
+   * Determines the horizontal position of the navigation items.
+   *
+   * - Available alignments: `left`, `right`, `center`
+   *
+   * @default `left`
+   */
+  alignment?: 'left' | 'right' | 'center';
+  /**
+   * Applies 100% to the navbar width.
+   *
+   * @default `undefined`
+   */
+  filled?: boolean;
+  /**
+   * Hide items for small screens and show them on the desktop screen.
+   *
+   * @default `false`
+   */
+  collapse?: boolean;
+}
 
 const navbarNavVariants = cva('a-navbar-nav a-inline-flex', {
   variants: {

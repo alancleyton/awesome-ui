@@ -1,10 +1,10 @@
 import { createContext } from 'react';
 
-import type { DrawerContextProps } from './drawer.types';
+import { DrawerRootProps } from './drawer-root';
 
-export const DrawerContext = createContext<DrawerContextProps>({
+export const DrawerContext = createContext<DrawerRootProps>({
   open: false,
-  onClose: () => {},
+  onClose: () => null,
   placement: 'left',
   size: 'md',
 });
