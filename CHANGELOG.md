@@ -1,3 +1,7 @@
+## [0.7.4](https://github.com/alancleyton/awesome-ui/compare/v0.7.3...v0.7.4) (2024-07-14)
+
+
+
 ## [0.7.3](https://github.com/alancleyton/awesome-ui/compare/v0.7.2...v0.7.3) (2024-07-09)
 
 
@@ -22,10 +26,6 @@
 * **input:** add elements ([7eec677](https://github.com/alancleyton/awesome-ui/commit/7eec6774cd6c53c274dfccfe273adcbd5419a51c))
 * **input:** add root component ([0659e95](https://github.com/alancleyton/awesome-ui/commit/0659e95c667b4b553888bf9bba5d8bbd1c2c5163))
 * **input:** exports component ([b1c9095](https://github.com/alancleyton/awesome-ui/commit/b1c9095a4627d33ef32da4c617d9f118018fba18))
-
-
-
-## [0.6.1](https://github.com/alancleyton/awesome-ui/compare/v0.6.0...v0.6.1) (2024-06-14)
 
 
 
