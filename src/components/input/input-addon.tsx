@@ -13,6 +13,7 @@ const inputAddonVariants = cva('', {
       info: 'a-ring-yellow-20',
       danger: 'a-ring-red-20',
       success: 'a-ring-green-20',
+      unstyled: 'a-ring-transparent',
     },
   },
   defaultVariants: {

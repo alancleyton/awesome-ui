@@ -22,7 +22,13 @@ export interface InputRootProps {
    *
    * @default `secondary`
    */
-  variant?: 'primary' | 'secondary' | 'info' | 'danger' | 'success';
+  variant?:
+    | 'primary'
+    | 'secondary'
+    | 'info'
+    | 'danger'
+    | 'success'
+    | 'unstyled';
 }
 
 export const InputContext = createContext<InputRootProps>({

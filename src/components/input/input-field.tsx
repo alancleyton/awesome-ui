@@ -38,6 +38,9 @@ const inputFieldVariants = cva(
         success: cn(
           'a-input-field-success a-ring-green-20 enabled:hover:a-ring-green enabled:focus:a-ring-2 enabled:focus:a-ring-green',
         ),
+        unstyled: cn(
+          'a-input-field-unstyled a-ring-transparent enabled:hover:a-ring-transparent enabled:focus:a-ring-0 enabled:focus:a-ring-transparent',
+        ),
       },
       size: {
         sm: 'a-input-field-sm a-h-7 a-py-2 a-px-4 a-text-sm',
