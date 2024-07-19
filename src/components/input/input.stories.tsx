@@ -130,6 +130,14 @@ export const SuccessInput: Story = {
   },
 };
 
+export const UnstyledInput: Story = {
+  ...InputTemplate,
+  args: {
+    variant: 'unstyled',
+    placeholder: 'Unstyled input',
+  },
+};
+
 export const FullWidthInput: Story = {
   ...InputTemplate,
   args: {

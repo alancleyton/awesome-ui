@@ -30,7 +30,7 @@ import { Input } from '@alancleyton67/awesome-ui';
 
 Example of the `<Input>` component:
 
-<div class="custom-canvas">
+<div class="custom-canvas full">
   <Story of={InputStories.DefaultInput} />
 </div>
 
@@ -44,12 +44,13 @@ Example of the `<Input>` component:
 
 The `<Input>` component can have different variant colors by setting the `variant` prop in `<Input.Root>`.
 
-<div class="custom-canvas columns">
+<div class="custom-canvas full columns">
   <Story of={InputStories.PrimaryInput} />
   <Story of={InputStories.SecondaryInput} />
   <Story of={InputStories.InfoInput} />
   <Story of={InputStories.DangerInput} />
   <Story of={InputStories.SuccessInput} />
+  <Story of={InputStories.UnstyledInput} />
 </div>
 
 <Source dark code={`
@@ -72,13 +73,17 @@ The `<Input>` component can have different variant colors by setting the `varian
 <Input.Root variant="success">
   <Input.Field placeholder='Success input' />
 </Input.Root>
+
+<Input.Root variant="unstyled">
+  <Input.Field placeholder='Success input' />
+</Input.Root>
 `} />
 
 ### Sizes
 
 The `<Input>` component can have different sizes by setting the `size` prop in `<Input.Root>`.
 
-<div class="custom-canvas columns">
+<div class="custom-canvas full columns">
   <Story of={InputStories.SmallInput} />
   <Story of={InputStories.MediumInput} />
   <Story of={InputStories.LargeInput} />
@@ -103,7 +108,7 @@ The `<Input>` component can have different sizes by setting the `size` prop in `
 Create full width inputs by setting the `isFull` prop in `<Input.Root>`.
 The default width of the `<Input>` is `auto`.
 
-<div class="custom-canvas">
+<div class="custom-canvas full">
   <Story of={InputStories.FullWidthInput} />
 </div>
 
@@ -117,7 +122,7 @@ The default width of the `<Input>` is `auto`.
 
 Specifies a non interactive input by setting `disabled` prop in `<Input.Field>`.
 
-<div class="custom-canvas">
+<div class="custom-canvas full">
   <Story of={InputStories.DisabledInput} />
 </div>
 
@@ -133,7 +138,7 @@ Add addons and elements to the left and right of the `<Input>` component.
 You can use the `<Input.RightAddon>`, `<Input.LeftAddon>`, `<Input.RightElement>`, `<Input.LeftElement>`
 with the `<Input.Group>` to help with addons and elements position.
 
-<div class="custom-canvas">
+<div class="custom-canvas full">
   <Story of={InputStories.RightAddonInput} />
 </div>
 
@@ -146,7 +151,7 @@ with the `<Input.Group>` to help with addons and elements position.
 </Input.Root>
 `} />
 
-<div class="custom-canvas">
+<div class="custom-canvas full">
   <Story of={InputStories.LeftAddonInput} />
 </div>
 
@@ -159,7 +164,7 @@ with the `<Input.Group>` to help with addons and elements position.
 </Input.Root>
 `} />
 
-<div class="custom-canvas">
+<div class="custom-canvas full">
   <Story of={InputStories.RightElementInput} />
 </div>
 
@@ -172,7 +177,7 @@ with the `<Input.Group>` to help with addons and elements position.
 </Input.Root>
 `} />
 
-<div class="custom-canvas">
+<div class="custom-canvas full">
   <Story of={InputStories.LeftElementInput} />
 </div>
 
