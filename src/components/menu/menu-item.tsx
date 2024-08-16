@@ -9,8 +9,8 @@ import { cn } from '@awesome-ui/utils';
 type MenuItemRef = ForwardedRef<HTMLDivElement>;
 
 const MenuItem = forwardRef(
-  <T extends object>(
-    { children, className, ...menuItemProps }: AriaMenuItemProps<T>,
+  (
+    { children, className, ...menuItemProps }: AriaMenuItemProps,
     ref: MenuItemRef,
   ) => {
     const classNames = cn(
