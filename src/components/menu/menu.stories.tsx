@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Menu, MenuProps } from '.';
-import { Button } from '@awesome-ui/components/button';
 
 export default {
   title: 'Components/Menu',
@@ -12,13 +11,28 @@ type Story = StoryObj<MenuProps>;
 const BasicMenuTemplate: Story = {
   render: () => {
     return (
-      <Menu>
-        <Button variant="secondary">Actions</Button>
-        <Menu.List>
-          <Menu.Item>My Account</Menu.Item>
+      <Menu label="Open menu" onAction={action => alert(` action: ${action}`)}>
+        <Menu.Item id="myAccount">My Account</Menu.Item>
+        <Menu.Item id="updateAccount">Update Account</Menu.Item>
+        <Menu.Item id="logout">Logout</Menu.Item>
+      </Menu>
+    );
+  },
+};
+
+const MenuWithSectionsTemplate: Story = {
+  render() {
+    return (
+      <Menu label="Profile">
+        <Menu.Section title="profile">
           <Menu.Item>Update Account</Menu.Item>
+          <Menu.Item>Account Dashboard</Menu.Item>
+          <Menu.Item>Appointments</Menu.Item>
+        </Menu.Section>
+        <Menu.Section title="actions">
           <Menu.Item>Logout</Menu.Item>
-        </Menu.List>
+          <Menu.Item>Delete Account</Menu.Item>
+        </Menu.Section>
       </Menu>
     );
   },
@@ -27,36 +41,28 @@ const BasicMenuTemplate: Story = {
 const MenuWithSeparatorTemplate: Story = {
   render: () => {
     return (
-      <Menu>
-        <Button variant="secondary">Options</Button>
-        <Menu.List>
-          <Menu.Item>New File</Menu.Item>
-          <Menu.Item>New Document</Menu.Item>
-          <Menu.Separator />
-          <Menu.Item>Open File</Menu.Item>
-          <Menu.Item>Rename File</Menu.Item>
-        </Menu.List>
+      <Menu label="File">
+        <Menu.Item>New File</Menu.Item>
+        <Menu.Item>New Document</Menu.Item>
+        <Menu.Separator />
+        <Menu.Item>Open File</Menu.Item>
+        <Menu.Item>Rename File</Menu.Item>
       </Menu>
     );
   },
 };
 
-const MenuGroupTemplate: Story = {
+const MenuWithDisabledItemsTemplate: Story = {
   render: () => {
     return (
-      <Menu>
-        <Button variant="secondary">Actions</Button>
-        <Menu.List>
-          <Menu.Group label="profile">
-            <Menu.Item>Update Payments</Menu.Item>
-            <Menu.Item>Dashboard</Menu.Item>
-          </Menu.Group>
-          <Menu.Separator />
-          <Menu.Group label="help">
-            <Menu.Item>FAQ</Menu.Item>
-            <Menu.Item>Help Center</Menu.Item>
-          </Menu.Group>
-        </Menu.List>
+      <Menu
+        label="Fruits"
+        onAction={action => alert(` fruit: ${action}`)}
+        disabledKeys={['watermelon']}
+      >
+        <Menu.Item id="watermelon">Watermelon</Menu.Item>
+        <Menu.Item id="banana">Banana</Menu.Item>
+        <Menu.Item id="apple">Apple</Menu.Item>
       </Menu>
     );
   },
@@ -66,10 +72,14 @@ export const BasicMenu: Story = {
   ...BasicMenuTemplate,
 };
 
+export const MenuWithSections: Story = {
+  ...MenuWithSectionsTemplate,
+};
+
 export const MenuWithSeparator: Story = {
   ...MenuWithSeparatorTemplate,
 };
 
-export const MenuGroup: Story = {
-  ...MenuGroupTemplate,
+export const MenuWithDisabledItems: Story = {
+  ...MenuWithDisabledItemsTemplate,
 };

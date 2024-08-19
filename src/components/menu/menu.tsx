@@ -1,23 +1,59 @@
-import { type ReactNode } from 'react';
+import { ReactNode } from 'react';
 import {
+  Popover,
   MenuTrigger as AriaMenuTrigger,
+  Menu as AriaMenu,
   type MenuTriggerProps as AriaMenuTriggerProps,
+  MenuProps as AriaMenuProps,
 } from 'react-aria-components';
 
-import { MenuList } from './menu-list';
-import { MenuItem } from './menu-item';
-import { MenuSeparator } from './menu-separator';
-import { MenuGroup } from './menu-group';
+import { Button, ButtonProps } from '@awesome-ui/components/button';
+import { cn } from '@awesome-ui/utils';
 
-export interface MenuProps extends Omit<AriaMenuTriggerProps, 'children'> {
-  children: ReactNode;
+import { MenuItem } from './menu-item';
+import { MenuSection } from './menu-section';
+import { MenuSeparator } from './menu-separator';
+
+export interface MenuProps
+  extends Omit<AriaMenuTriggerProps, 'isOpen' | 'children'>,
+    Omit<AriaMenuProps<object>, 'isOpen'> {
+  label?: string | ReactNode;
+  isOpen?: boolean;
+  variant?: ButtonProps['variant'];
+  size?: ButtonProps['size'];
 }
 
-export const Menu = ({ children, ...menuProps }: MenuProps) => {
-  return <AriaMenuTrigger {...menuProps}>{children}</AriaMenuTrigger>;
+export const Menu = ({
+  children,
+  className,
+  label,
+  variant = 'primary',
+  size = 'md',
+  ...menuProps
+}: MenuProps) => {
+  const classNames = cn(
+    'a-menu-list a-block a-rounded-sm a-outline-none a-bg-white a-border a-border-solid a-border-gray-10 a-shadow-md',
+    className,
+  );
+
+  return (
+    <AriaMenuTrigger {...menuProps}>
+      {typeof label !== 'string' ? (
+        label
+      ) : (
+        <Button variant={variant} size={size}>
+          {label}
+        </Button>
+      )}
+      <Popover>
+        <AriaMenu {...menuProps} className={classNames}>
+          {children}
+        </AriaMenu>
+      </Popover>
+    </AriaMenuTrigger>
+  );
 };
 
-Menu.List = MenuList;
 Menu.Item = MenuItem;
 Menu.Separator = MenuSeparator;
-Menu.Group = MenuGroup;
+Menu.Section = MenuSection;
