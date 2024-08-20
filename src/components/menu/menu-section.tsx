@@ -9,6 +9,9 @@ import { cn } from '@awesome-ui/utils';
 
 export interface MenuSectionProps
   extends Omit<AriaSectionProps<object>, 'children'> {
+  /**
+   * The title for the group name.
+   */
   title?: string;
   children: ReactNode;
 }
