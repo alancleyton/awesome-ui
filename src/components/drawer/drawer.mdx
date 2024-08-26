@@ -32,22 +32,24 @@ Example of the `<Drawer>` component:
 </div>
 
 <Source dark code={`
-const BasicDrawerExample = () => {
+const default = () => {
   const [isOpen, setIsOpen] = useState(false);
   const openDrawer = () => setIsOpen(true);
   const closeDrawer = () => setIsOpen(false);
 
-  <>
-    <Button onPress={openDrawer}>open</Button>
-    <Drawer.Root open={isOpen} onClose={closeDrawer}>
-      <Drawer.Content>
-        <div className="p-5 h-full bg-white">
-          <p>left</p>
-          <Button onPress={handleCloseDrawer}>close drawer</Button>
-        </div>
-      </Drawer.Content>
-    </Drawer.root>
-  </>
+  return (
+    <>
+      <Button onPress={openDrawer}>open</Button>
+      <Drawer open={isOpen} onClose={closeDrawer}>
+        <Drawer.Content>
+          <div className="p-5 h-full bg-white">
+            <p>left</p>
+            <Button onPress={handleCloseDrawer}>close drawer</Button>
+          </div>
+        </Drawer.Content>
+      </Drawer>
+    </>
+  )
 };
 `} />
 
@@ -65,7 +67,7 @@ Placements can be `top`, `right`, `bottom`, `left`. The default size is `left`
 </div>
 
 <Source dark code={`
-const DrawerPlacementsExample = () => {
+const default = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [placement, setPlacement] = useState('left');
 
@@ -80,25 +82,27 @@ const DrawerPlacementsExample = () => {
     openDrawer();
   };
 
-  <>
-    {placements.map((placement) => (
-        <Button
-          onPress={() => changePlacement(placement)}
-          key={placement}
-        >
-          {placement} drawer
-        </Button>
-    ))};
+  return (
+    <>
+      {placements.map((placement) => (
+          <Button
+            onPress={() => changePlacement(placement)}
+            key={placement}
+          >
+            {placement} drawer
+          </Button>
+      ))};
 
-    <Drawer.Root placement={placement} open={isOpen} onClose={closeDrawer}>
-      <Drawer.Content>
-        <div className="p-5 h-full bg-white">
-          <p>drawer content</p>
-          <Button onPress={handleCloseDrawer}>close drawer</Button>
-        </div>
-      </Drawer.Content>
-    </Drawer.Root>
-  </>
+      <Drawer placement={placement} open={isOpen} onClose={closeDrawer}>
+        <Drawer.Content>
+          <div className="p-5 h-full bg-white">
+            <p>drawer content</p>
+            <Button onPress={handleCloseDrawer}>close drawer</Button>
+          </div>
+        </Drawer.Content>
+      </Drawer>
+    </>
+  )
 };
 `} />
 
@@ -115,7 +119,7 @@ The size prop can receive `sm`, `md`, `lg` and `full` values. The default size i
 </div>
 
 <Source dark code={`
-const DrawerSizesExample = () => {
+const default = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [size, setSize] = useState('md');
 
@@ -130,36 +134,38 @@ const DrawerSizesExample = () => {
     openDrawer();
   };
 
-  <>
-    {placements.map((size) => (
-        <Button
-          onPress={() => changeSize(size)}
-          key={size}
-        >
-          {size} drawer
-        </Button>
-    ))};
+  return (
+    <>
+      {placements.map((size) => (
+          <Button
+            onPress={() => changeSize(size)}
+            key={size}
+          >
+            {size} drawer
+          </Button>
+      ))};
 
-    <Drawer.Root size={size} open={isOpen} onClose={closeDrawer}>
-      <Drawer.Content>
-        <div className="p-5 h-full bg-white">
-          <p>drawer content</p>
-          <Button onPress={handleCloseDrawer}>close drawer</Button>
-        </div>
-      </Drawer.Content>
-    </Drawer.Root>
-  </>
+      <Drawer size={size} open={isOpen} onClose={closeDrawer}>
+        <Drawer.Content>
+          <div className="p-5 h-full bg-white">
+            <p>drawer content</p>
+            <Button onPress={handleCloseDrawer}>close drawer</Button>
+          </div>
+        </Drawer.Content>
+      </Drawer>
+    </>
+  )
 };
 `} />
 
 
 ### Properties
 
-- **`<Drawer.Root>`** properties:
+- **`<Drawer>`** properties:
 
 <Markdown>
 {`
-| prop    | type     | default    | description 
+| prop    | type     | default    | description
 |---------|----------|------------|
 | open    | boolean  | false      | If true, the drawer is shown.
 | onClose | function | () => null | Callback used to close the drawer.

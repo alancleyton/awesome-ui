@@ -1,11 +1,11 @@
-import { HTMLAttributes, LinkHTMLAttributes } from 'react';
+import type { HTMLAttributes, LinkHTMLAttributes } from 'react';
 
 import { cn } from '@awesome-ui/utils';
 
 export type NavbarBrandProps = LinkHTMLAttributes<HTMLAnchorElement> &
   HTMLAttributes<HTMLDivElement>;
 
-const NavbarBrand = ({
+export const NavbarBrand = ({
   children,
   className,
   href,
@@ -19,5 +19,3 @@ const NavbarBrand = ({
     </Tag>
   );
 };
-
-export { NavbarBrand };

@@ -3,7 +3,7 @@ import { cva } from 'class-variance-authority';
 
 import { cn } from '@awesome-ui/utils';
 
-import { useInputContext } from './input-root';
+import { useInput } from './input-context';
 
 const inputAddonVariants = cva('', {
   variants: {
@@ -26,7 +26,7 @@ export const InputRightAddon = ({
   className,
   ...otherProps
 }: HTMLAttributes<HTMLDivElement>) => {
-  const { variant } = useInputContext();
+  const { variant } = useInput();
   const classes = cn(
     'a-input-right-addon a-inline-flex a-items-center a-px-4 a-ml-hr a-rounded-sm a-rounded-s-none a-outline-none a-ring-1',
     inputAddonVariants({ variant }),
@@ -44,7 +44,7 @@ export const InputLeftAddon = ({
   className,
   ...otherProps
 }: HTMLAttributes<HTMLDivElement>) => {
-  const { variant } = useInputContext();
+  const { variant } = useInput();
   const classes = cn(
     'a-input-left-addon a-inline-flex a-items-center a-px-4 a-ml-hr a-rounded-sm a-rounded-e-none a-outline-none a-ring-1',
     inputAddonVariants({ variant }),

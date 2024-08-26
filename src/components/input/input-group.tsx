@@ -1,8 +1,8 @@
-import { createContext, useContext, HTMLAttributes } from 'react';
+import type { HTMLAttributes } from 'react';
 
 import { cn } from '@awesome-ui/utils';
 
-import { useInputContext } from './input-root';
+import { InputGroupContext, useInput } from './input-context';
 
 export interface InputGroupProps extends HTMLAttributes<HTMLDivElement> {
   /**
@@ -39,17 +39,7 @@ export interface InputGroupProps extends HTMLAttributes<HTMLDivElement> {
   elementLeft?: boolean;
 }
 
-export const InputGroupContext = createContext<InputGroupProps>({
-  addonRight: false,
-  addonLeft: false,
-  elementRight: false,
-  elementLeft: false,
-});
-
-// eslint-disable-next-line
-export const useInputGroupContext = () => useContext(InputGroupContext);
-
-const InputGroup = ({
+export const InputGroup = ({
   children,
   className,
   addonRight,
@@ -58,7 +48,7 @@ const InputGroup = ({
   elementLeft,
   ...otherProps
 }: InputGroupProps) => {
-  const { isFull } = useInputContext();
+  const { isFull } = useInput();
   return (
     <InputGroupContext.Provider
       value={{ addonRight, addonLeft, elementRight, elementLeft }}
@@ -80,5 +70,3 @@ const InputGroup = ({
     </InputGroupContext.Provider>
   );
 };
-
-export { InputGroup };

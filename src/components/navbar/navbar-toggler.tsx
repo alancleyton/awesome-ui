@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import type { HTMLAttributes } from 'react';
 import { cva } from 'class-variance-authority';
 
 import { cn } from '@awesome-ui/utils';
@@ -24,7 +24,7 @@ const navbarTogglerVariants = cva('a-navbar-toggler tablet-sm:a-hidden', {
   },
 });
 
-const NavbarTogglerBurger = ({
+export const NavbarTogglerBurger = ({
   className,
   ...otherProps
 }: HTMLAttributes<HTMLDivElement>) => {
@@ -40,7 +40,7 @@ const NavbarTogglerBurger = ({
   );
 };
 
-const NavbarToggler = ({
+export const NavbarToggler = ({
   children,
   className,
   alignment,
@@ -58,5 +58,3 @@ const NavbarToggler = ({
     </div>
   );
 };
-
-export { NavbarToggler, NavbarTogglerBurger };

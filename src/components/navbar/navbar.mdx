@@ -27,7 +27,7 @@ import { Navbar } from '@alancleyton67/awesome-ui';
 
 Example of the `<Navbar>` component:
 
-<div class="custom-canvas">
+<div class="custom-canvas full">
   <Story of={NavbarStories.PrimaryNavbar} />
 </div>
 
@@ -35,7 +35,7 @@ Example of the `<Navbar>` component:
 import { Navbar, Button } from '@alancleyton67/awesome-ui';
 
 const BasicNavbarExample = () => (
-  <Navbar.Root>
+  <Navbar>
     <Navbar.Brand className="text-white font-semibold text-lg">
       NavBar
     </Navbar.Brand>
@@ -56,7 +56,7 @@ const BasicNavbarExample = () => (
     <Navbar.Nav>
       <Button variant="card">Sign In</Button>
     </Navbar.Nav>
-  </Navbar.Root>
+  </Navbar>
 );
 `} />
 
@@ -68,9 +68,9 @@ The default collapse prop value is `false`.
 
 ### Variants
 
-Navbar can have different background color variants by setting the `variant` prop. The default variant is `primary`
+Navbar can have different background color variants by setting the `variant` prop in `<Navbar>`. The default variant is `primary`
 
-<div class="custom-canvas">
+<div class="custom-canvas full">
   <Story of={NavbarStories.PrimaryNavbar} />
 </div>
 
@@ -78,7 +78,7 @@ Navbar can have different background color variants by setting the `variant` pro
 import { Navbar, Button } from '@alancleyton67/awesome-ui';
 
 const BasicNavbarExample = () => (
-  <Navbar.Root variant="primary">
+  <Navbar variant="primary">
     <Navbar.Brand className="text-white font-semibold text-lg">
       NavBar
     </Navbar.Brand>
@@ -99,11 +99,11 @@ const BasicNavbarExample = () => (
     <Navbar.Nav>
       <Button variant="card">Sign In</Button>
     </Navbar.Nav>
-  </Navbar.Root>
+  </Navbar>
 );
 `} />
 
-<div class="custom-canvas">
+<div class="custom-canvas full">
   <Story of={NavbarStories.SecondaryNavbar} />
 </div>
 
@@ -111,7 +111,7 @@ const BasicNavbarExample = () => (
 import { Navbar, Button } from '@alancleyton67/awesome-ui';
 
 const BasicNavbarExample = () => (
-  <Navbar.Root variant="secondary">
+  <Navbar variant="secondary">
     <Navbar.Brand className="text-white font-semibold text-lg">
       NavBar
     </Navbar.Brand>
@@ -132,7 +132,7 @@ const BasicNavbarExample = () => (
     <Navbar.Nav>
       <Button variant="card">Sign In</Button>
     </Navbar.Nav>
-  </Navbar.Root>
+  </Navbar>
 );
 `} />
 
@@ -141,7 +141,7 @@ const BasicNavbarExample = () => (
 The `<Navbar.Nav>` component has the `alignment` prop. Use to specify the position of the navigation items.
 The default alignment is `left`
 
-<div class="custom-canvas">
+<div class="custom-canvas full">
   <Story of={NavbarStories.NavbarRight} />
 </div>
 
@@ -149,7 +149,7 @@ The default alignment is `left`
 import { Navbar, Button } from '@alancleyton67/awesome-ui';
 
 const BasicNavbarExample = () => (
-  <Navbar.Root>
+  <Navbar>
     <Navbar.Brand className="text-white font-semibold text-lg">
       NavBar
     </Navbar.Brand>
@@ -170,11 +170,11 @@ const BasicNavbarExample = () => (
     <Navbar.Nav>
       <Button variant="card">Sign In</Button>
     </Navbar.Nav>
-  </Navbar.Root>
+  </Navbar>
 );
 `} />
 
-<div class="custom-canvas">
+<div class="custom-canvas full">
   <Story of={NavbarStories.NavbarCenter} />
 </div>
 
@@ -183,7 +183,7 @@ const BasicNavbarExample = () => (
 import { Navbar, Button } from '@alancleyton67/awesome-ui';
 
 const BasicNavbarExample = () => (
-  <Navbar.Root>
+  <Navbar>
     <Navbar.Brand className="text-white font-semibold text-lg">
       NavBar
     </Navbar.Brand>
@@ -204,12 +204,12 @@ const BasicNavbarExample = () => (
     <Navbar.Nav>
       <Button variant="card">Sign In</Button>
     </Navbar.Nav>
-  </Navbar.Root>
+  </Navbar>
 );
 `} />
 
 
-<div class="custom-canvas">
+<div class="custom-canvas full">
   <Story of={NavbarStories.NavbarLeft} />
 </div>
 
@@ -217,7 +217,7 @@ const BasicNavbarExample = () => (
 import { Navbar, Button } from '@alancleyton67/awesome-ui';
 
 const BasicNavbarExample = () => (
-  <Navbar.Root>
+  <Navbar>
     <Navbar.Brand className="text-white font-semibold text-lg">
       NavBar
     </Navbar.Brand>
@@ -238,7 +238,7 @@ const BasicNavbarExample = () => (
     <Navbar.Nav>
       <Button variant="card">Sign In</Button>
     </Navbar.Nav>
-  </Navbar.Root>
+  </Navbar>
 );
 `} />
 
@@ -248,7 +248,7 @@ const BasicNavbarExample = () => (
 
 <Markdown>
 {`
-| prop    | type   | default   | description 
+| prop    | type   | default   | description
 |---------|--------|-----------|
 | variant | string | 'primary' | Applies background color to the navbar. Available variants: 'primary', 'secondary'.
 | size    | string | 'md'      | Applies the size of the navbar. Available sizes: 'sm', 'md', 'lg'.
@@ -259,7 +259,7 @@ const BasicNavbarExample = () => (
 
 <Markdown>
 {`
-| prop      | type   | default | description 
+| prop      | type   | default | description
 |-----------|--------|---------|
 | alignment | string | 'left'  | Determines the horizontal position of the navigation toggler. Available alignments: 'left', 'right', 'center'.
 `}
@@ -269,10 +269,10 @@ const BasicNavbarExample = () => (
 
 <Markdown>
 {`
-| prop      | type    | default | description 
+| prop      | type    | default | description
 |-----------|---------|---------|
 | alignment | string  | 'left'  | Determines the horizontal position of the navigation items. Available alignments: 'left', 'right', 'center'.
-| filled    | boolean | false   | Applies 100% to the navbar width. 
+| filled    | boolean | false   | Applies 100% to the navbar width.
 | collapse  | boolean | false   | Hide items for small screens and show them on the desktop screen.
 `}
 </Markdown>

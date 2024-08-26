@@ -15,9 +15,9 @@ describe('input', () => {
 
   it('should render correctly', () => {
     render(
-      <Input.Root>
+      <Input>
         <Input.Field data-testid="input-field" />
-      </Input.Root>,
+      </Input>,
     );
 
     const inputField = screen.getByTestId('input-field');
@@ -26,14 +26,14 @@ describe('input', () => {
 
   it('should be accessible', async () => {
     render(
-      <Input.Root>
+      <Input>
         <label htmlFor="example">example</label>
         <Input.Field
           id="example"
           data-testid="input-field"
           aria-labelledby="temperature low"
         />
-      </Input.Root>,
+      </Input>,
     );
 
     const inputField = screen.getByTestId('input-field');
@@ -44,9 +44,9 @@ describe('input', () => {
     const inputRef = createRef<HTMLInputElement>();
 
     render(
-      <Input.Root>
+      <Input>
         <Input.Field data-testid="input-field" ref={inputRef} />
-      </Input.Root>,
+      </Input>,
     );
 
     const inputField = screen.getByTestId('input-field');
@@ -57,9 +57,9 @@ describe('input', () => {
 
   it('should render input field with class name', () => {
     render(
-      <Input.Root>
+      <Input>
         <Input.Field className="custom" data-testid="input-field" />
-      </Input.Root>,
+      </Input>,
     );
 
     const inputField = screen.getByTestId('input-field');
@@ -68,9 +68,9 @@ describe('input', () => {
 
   it('should render input field with type', () => {
     render(
-      <Input.Root>
+      <Input>
         <Input.Field type="text" data-testid="input-field" />
-      </Input.Root>,
+      </Input>,
     );
 
     const inputField = screen.getByTestId('input-field');
@@ -79,9 +79,9 @@ describe('input', () => {
 
   it('should render input field with placeholder', () => {
     render(
-      <Input.Root>
+      <Input>
         <Input.Field placeholder="example" data-testid="input-field" />
-      </Input.Root>,
+      </Input>,
     );
 
     const inputField = screen.getByTestId('input-field');
@@ -90,9 +90,9 @@ describe('input', () => {
 
   it('should render disabled input field', () => {
     render(
-      <Input.Root>
+      <Input>
         <Input.Field disabled data-testid="input-field" />
-      </Input.Root>,
+      </Input>,
     );
 
     const inputField = screen.getByTestId('input-field');
@@ -101,9 +101,9 @@ describe('input', () => {
 
   it('should render input field with default size=md', () => {
     render(
-      <Input.Root>
+      <Input>
         <Input.Field data-testid="input-field" />
-      </Input.Root>,
+      </Input>,
     );
 
     const inputField = screen.getByTestId('input-field');
@@ -112,9 +112,9 @@ describe('input', () => {
 
   it('should render input field with size=lg', () => {
     render(
-      <Input.Root size="lg">
+      <Input size="lg">
         <Input.Field data-testid="input-field" />
-      </Input.Root>,
+      </Input>,
     );
 
     const inputField = screen.getByTestId('input-field');
@@ -123,9 +123,9 @@ describe('input', () => {
 
   it('should render input field with default variant=secondary', () => {
     render(
-      <Input.Root>
+      <Input>
         <Input.Field data-testid="input-field" />
-      </Input.Root>,
+      </Input>,
     );
 
     const inputField = screen.getByTestId('input-field');
@@ -134,9 +134,9 @@ describe('input', () => {
 
   it('should render input field with variant=primary', () => {
     render(
-      <Input.Root variant="primary">
+      <Input variant="primary">
         <Input.Field data-testid="input-field" />
-      </Input.Root>,
+      </Input>,
     );
 
     const inputField = screen.getByTestId('input-field');
@@ -145,9 +145,9 @@ describe('input', () => {
 
   it('should render full width input field', () => {
     render(
-      <Input.Root isFull>
+      <Input isFull>
         <Input.Field data-testid="input-field" />
-      </Input.Root>,
+      </Input>,
     );
 
     const inputField = screen.getByTestId('input-field');
@@ -156,11 +156,11 @@ describe('input', () => {
 
   it('should render input with group', () => {
     render(
-      <Input.Root>
+      <Input>
         <Input.Group data-testid="input-group">
           <Input.Field data-testid="input-field" />
         </Input.Group>
-      </Input.Root>,
+      </Input>,
     );
 
     const inputGroup = screen.getByTestId('input-group');
@@ -171,12 +171,12 @@ describe('input', () => {
 
   it('should render input with element', () => {
     render(
-      <Input.Root>
+      <Input>
         <Input.Group elementRight data-testid="input-group">
           <Input.RightElement data-testid="element-right">@</Input.RightElement>
           <Input.Field data-testid="input-field" />
         </Input.Group>
-      </Input.Root>,
+      </Input>,
     );
 
     const inputGroup = screen.getByTestId('input-group');
@@ -189,12 +189,12 @@ describe('input', () => {
 
   it('should render input with addon', () => {
     render(
-      <Input.Root>
+      <Input>
         <Input.Group addonLeft data-testid="input-group">
           <Input.LeftAddon data-testid="addon-left">@</Input.LeftAddon>
           <Input.Field data-testid="input-field" />
         </Input.Group>
-      </Input.Root>,
+      </Input>,
     );
 
     const inputGroup = screen.getByTestId('input-group');
