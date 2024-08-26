@@ -35,14 +35,14 @@ Example of the `<Input>` component:
 </div>
 
 <Source dark code={`
-<Input.Root>
+<Input>
   <Input.Field placeholder='Basic input' />
-</Input.Root>
+</Input>
 `} />
 
 ### Variants
 
-The `<Input>` component can have different variant colors by setting the `variant` prop in `<Input.Root>`.
+The `<Input>` component can have different variant colors by setting the `variant` prop in `<Input>`.
 
 <div class="custom-canvas full columns">
   <Story of={InputStories.PrimaryInput} />
@@ -54,34 +54,34 @@ The `<Input>` component can have different variant colors by setting the `varian
 </div>
 
 <Source dark code={`
-<Input.Root variant="primary">
+<Input variant="primary">
   <Input.Field placeholder='Primary input' />
-</Input.Root>
+</Input>
 
-<Input.Root variant="secondary">
+<Input variant="secondary">
   <Input.Field placeholder='Secondary input' />
-</Input.Root>
+</Input>
 
-<Input.Root variant="info">
+<Input variant="info">
   <Input.Field placeholder='Info input' />
-</Input.Root>
+</Input>
 
-<Input.Root variant="danger">
+<Input variant="danger">
   <Input.Field placeholder='Danger input' />
-</Input.Root>
+</Input>
 
-<Input.Root variant="success">
+<Input variant="success">
   <Input.Field placeholder='Success input' />
-</Input.Root>
+</Input>
 
-<Input.Root variant="unstyled">
+<Input variant="unstyled">
   <Input.Field placeholder='Success input' />
-</Input.Root>
+</Input>
 `} />
 
 ### Sizes
 
-The `<Input>` component can have different sizes by setting the `size` prop in `<Input.Root>`.
+The `<Input>` component can have different sizes by setting the `size` prop in `<Input>`.
 
 <div class="custom-canvas full columns">
   <Story of={InputStories.SmallInput} />
@@ -90,22 +90,22 @@ The `<Input>` component can have different sizes by setting the `size` prop in `
 </div>
 
 <Source dark code={`
-<Input.Root size="sm">
+<Input size="sm">
   <Input.Field placeholder='Small input' />
-</Input.Root>
+</Input>
 
-<Input.Root size="md">
+<Input size="md">
   <Input.Field placeholder='Medium input' />
-</Input.Root>
+</Input>
 
-<Input.Root size="lg">
+<Input size="lg">
   <Input.Field placeholder='Large input' />
-</Input.Root>
+</Input>
 `} />
 
 ### Width
 
-Create full width inputs by setting the `isFull` prop in `<Input.Root>`.
+Create full width inputs by setting the `isFull` prop in `<Input>`.
 The default width of the `<Input>` is `auto`.
 
 <div class="custom-canvas full">
@@ -113,9 +113,9 @@ The default width of the `<Input>` is `auto`.
 </div>
 
 <Source dark code={`
-<Input.Root isFull>
+<Input isFull>
   <Input.Field placeholder='Full input' />
-</Input.Root>
+</Input>
 `} />
 
 ### Disabled
@@ -127,9 +127,9 @@ Specifies a non interactive input by setting `disabled` prop in `<Input.Field>`.
 </div>
 
 <Source dark code={`
-<Input.Root>
+<Input>
   <Input.Field placeholder='Disabled input' disabled />
-</Input.Root>
+</Input>
 `} />
 
 ### Addons and Elements
@@ -143,12 +143,12 @@ with the `<Input.Group>` to help with addons and elements position.
 </div>
 
 <Source dark code={`
-<Input.Root>
+<Input>
   <Input.Group addonRight>
     <Input.Field placeholder='Addon right input' />
     <Input.RightAddon>@</Input.RightAddon>
   </Input.Group>
-</Input.Root>
+</Input>
 `} />
 
 <div class="custom-canvas full">
@@ -156,12 +156,12 @@ with the `<Input.Group>` to help with addons and elements position.
 </div>
 
 <Source dark code={`
-<Input.Root>
+<Input>
   <Input.Group addonLeft>
     <Input.LeftAddon>@</Input.LeftAddon>
     <Input.Field placeholder='Addon left input' />
   </Input.Group>
-</Input.Root>
+</Input>
 `} />
 
 <div class="custom-canvas full">
@@ -169,12 +169,12 @@ with the `<Input.Group>` to help with addons and elements position.
 </div>
 
 <Source dark code={`
-<Input.Root>
+<Input>
   <Input.Group elementRight>
     <Input.Field placeholder='Element right input' />
     <Input.RightElement>@</Input.RightElement>
   </Input.Group>
-</Input.Root>
+</Input>
 `} />
 
 <div class="custom-canvas full">
@@ -182,21 +182,21 @@ with the `<Input.Group>` to help with addons and elements position.
 </div>
 
 <Source dark code={`
-<Input.Root>
+<Input>
   <Input.Group elementLeft>
     <Input.LeftElement>@</Input.LeftElement>
     <Input.Field placeholder='Element left input' />
   </Input.Group>
-</Input.Root>
+</Input>
 `} />
 
 ### Properties
 
-- **`<Input.Root>`** properties:
+- **`<Input>`** properties:
 
 <Markdown>
 {`
-| prop     | type     | default     | description 
+| prop     | type     | default     | description
 |----------|----------|-------------|
 | variant  | string   | 'secondary' | Applies color variant to the input. Available variants: 'primary', 'secondary', 'info', 'danger', 'success'.
 | size     | string   | 'md'        | Applies the size of the input. Available sizes: 'sm', 'md', 'lg'.
@@ -208,7 +208,7 @@ with the `<Input.Group>` to help with addons and elements position.
 
 <Markdown>
 {`
-| prop         | type    | default | description 
+| prop         | type    | default | description
 |--------------|---------|---------|
 | addonRight   | boolean | false   | Applies the right addon to the input field.
 | addonleft    | boolean | false   | Applies the left addon to the input field.

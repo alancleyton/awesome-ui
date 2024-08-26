@@ -1,4 +1,4 @@
-import { forwardRef, ForwardedRef } from 'react';
+import { forwardRef, type ForwardedRef } from 'react';
 import {
   Input as AriaInput,
   InputProps as AriaInputProps,
@@ -7,8 +7,7 @@ import { cva } from 'class-variance-authority';
 
 import { cn } from '@awesome-ui/utils';
 
-import { useInputContext } from './input-root';
-import { useInputGroupContext } from './input-group';
+import { useInput, useInputGroup } from './input-context';
 
 export type RemovedProps = 'size';
 export type InputFieldRef = ForwardedRef<HTMLInputElement>;
@@ -74,9 +73,9 @@ const ELEMENT_RIGHT_SIZES = {
 export const InputField = forwardRef(
   (props: InputFieldProps, ref: InputFieldRef) => {
     const { type, className, ...otherProps } = props;
-    const { size, isFull, variant } = useInputContext();
+    const { size, isFull, variant } = useInput();
     const { addonRight, addonLeft, elementRight, elementLeft } =
-      useInputGroupContext();
+      useInputGroup();
 
     const ELEMENT_SIZE_INDEX = size ? size : 'md';
 

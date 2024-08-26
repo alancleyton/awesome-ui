@@ -2,7 +2,7 @@ import type { HTMLAttributes } from 'react';
 
 import { cn } from '@awesome-ui/utils';
 
-import { useInputContext } from './input-root';
+import { useInput } from './input-context';
 
 const RIGHT_SIDE_SIZES = {
   sm: 'a-right-4',
@@ -21,7 +21,7 @@ export const InputRightElement = ({
   className,
   ...otherProps
 }: HTMLAttributes<HTMLDivElement>) => {
-  const { size } = useInputContext();
+  const { size } = useInput();
   const SIZE_INDEX = size ? size : 'md';
 
   return (
@@ -43,7 +43,7 @@ export const InputLeftElement = ({
   className,
   ...otherProps
 }: HTMLAttributes<HTMLDivElement>) => {
-  const { size } = useInputContext();
+  const { size } = useInput();
   const SIZE_INDEX = size ? size : 'md';
 
   return (

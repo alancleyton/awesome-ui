@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Input, InputRootProps, InputFieldProps, InputGroupProps } from '.';
+import { Input, InputProps, InputFieldProps, InputGroupProps } from '.';
 
 export default {
   title: 'Components/Input',
-  component: Input.Root,
-} as Meta<InputRootProps>;
+  component: Input,
+} as Meta<InputProps>;
 
 type InputTemplateProps = {
   addonLeftContent?: string | ReactNode;
@@ -15,7 +15,7 @@ type InputTemplateProps = {
   elementLeftContent?: string | ReactNode;
 };
 type Story = StoryObj<
-  InputRootProps & InputFieldProps & InputGroupProps & InputTemplateProps
+  InputProps & InputFieldProps & InputGroupProps & InputTemplateProps
 >;
 
 const InputTemplate: Story = {
@@ -35,7 +35,7 @@ const InputTemplate: Story = {
     elementRightContent,
   }) => {
     return (
-      <Input.Root size={size} variant={variant} isFull={isFull}>
+      <Input size={size} variant={variant} isFull={isFull}>
         <Input.Group
           addonLeft={addonLeft}
           addonRight={addonRight}
@@ -54,7 +54,7 @@ const InputTemplate: Story = {
             <Input.RightElement>{elementRightContent}</Input.RightElement>
           )}
         </Input.Group>
-      </Input.Root>
+      </Input>
     );
   },
 };
