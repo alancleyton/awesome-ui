@@ -1,3 +1,12 @@
+# [0.10.0](https://github.com/alancleyton/awesome-ui/compare/v0.9.1...v0.10.0) (2024-08-26)
+
+
+### Features
+
+* **menu:** exports component ([c4c37cc](https://github.com/alancleyton/awesome-ui/commit/c4c37cc8d41848f8149ecfea6153cc1758271076))
+
+
+
 ## [0.9.1](https://github.com/alancleyton/awesome-ui/compare/v0.9.0...v0.9.1) (2024-08-21)
 
 
@@ -28,10 +37,6 @@
 ### Features
 
 * **input:** add unstyled variant ([f04a303](https://github.com/alancleyton/awesome-ui/commit/f04a3039c1d2306376cf5772ada2e0e9a72c8640))
-
-
-
-## [0.7.5](https://github.com/alancleyton/awesome-ui/compare/v0.7.4...v0.7.5) (2024-07-14)
 
 
 
