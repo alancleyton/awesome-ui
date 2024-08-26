@@ -1,4 +1,4 @@
-import { useMemo, HTMLAttributes } from 'react';
+import { useMemo, type HTMLAttributes } from 'react';
 
 import { cn } from '@awesome-ui/utils';
 

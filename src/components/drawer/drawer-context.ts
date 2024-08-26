@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, useContext } from 'react';
 
 import { DrawerProps } from '.';
 
@@ -8,3 +8,5 @@ export const DrawerContext = createContext<DrawerProps>({
   placement: 'left',
   size: 'md',
 });
+
+export const useDrawer = () => useContext(DrawerContext);
