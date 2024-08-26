@@ -46,10 +46,7 @@ const navbarNavVariants = cva('a-navbar-nav a-inline-flex', {
   },
 });
 
-/**
- * Navbar Nav.
- */
-const NavbarNav = ({
+export const NavbarNav = ({
   children,
   className,
   alignment,
@@ -68,7 +65,7 @@ const NavbarNav = ({
   );
 };
 
-const NavbarNavItems = ({
+export const NavbarNavItems = ({
   children,
   className,
   ...otherProps
@@ -84,7 +81,7 @@ const NavbarNavItems = ({
   );
 };
 
-const NavbarNavItem = ({
+export const NavbarNavItem = ({
   children,
   className,
   ...otherProps
@@ -97,7 +94,7 @@ const NavbarNavItem = ({
   );
 };
 
-const NavbarNavLink = ({
+export const NavbarNavLink = ({
   children,
   className,
   ...otherProps
@@ -115,5 +112,3 @@ const NavbarNavLink = ({
     </a>
   );
 };
-
-export { NavbarNav, NavbarNavItems, NavbarNavItem, NavbarNavLink };

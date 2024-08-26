@@ -2,19 +2,19 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Navbar } from '.';
 import { Button } from '../button';
-import type { NavbarRootProps, NavbarNavProps } from '.';
+import type { NavbarProps, NavbarNavProps } from '.';
 
 export default {
   title: 'Components/Navbar',
-  component: Navbar.Root,
-} as Meta<NavbarRootProps>;
+  component: Navbar,
+} as Meta<NavbarProps>;
 
-type Story = StoryObj<NavbarRootProps & NavbarNavProps>;
+type Story = StoryObj<NavbarProps & NavbarNavProps>;
 
 const NavbarTemplate: Story = {
   render: ({ variant, size, alignment, filled, collapse }) => {
     return (
-      <Navbar.Root variant={variant} size={size}>
+      <Navbar variant={variant} size={size}>
         <Navbar.Brand className="a-text-white a-font-semibold a-text-lg">
           NavBar
         </Navbar.Brand>
@@ -35,7 +35,7 @@ const NavbarTemplate: Story = {
         <Navbar.Nav collapse={collapse}>
           <Button variant="card">Sign In</Button>
         </Navbar.Nav>
-      </Navbar.Root>
+      </Navbar>
     );
   },
 };

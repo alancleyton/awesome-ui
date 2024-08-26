@@ -10,7 +10,7 @@ describe('Navbar Root', () => {
   });
 
   it('should render correctly', () => {
-    render(<Navbar.Root data-testid="navbar-root">navbar</Navbar.Root>);
+    render(<Navbar data-testid="navbar-root">navbar</Navbar>);
 
     const navbarRoot = screen.getByTestId('navbar-root');
 
@@ -19,7 +19,7 @@ describe('Navbar Root', () => {
 
   it('should be accessible', async () => {
     window.HTMLCanvasElement.prototype.getContext = () => null;
-    render(<Navbar.Root data-testid="navbar-root">navbar</Navbar.Root>);
+    render(<Navbar data-testid="navbar-root">navbar</Navbar>);
 
     const navbarRoot = screen.getByTestId('navbar-root');
 
@@ -28,9 +28,9 @@ describe('Navbar Root', () => {
 
   it('should render with class name', () => {
     render(
-      <Navbar.Root data-testid="navbar-root" className="custom-navbar">
+      <Navbar data-testid="navbar-root" className="custom-navbar">
         navbar
-      </Navbar.Root>,
+      </Navbar>,
     );
 
     const navbarRoot = screen.getByTestId('navbar-root');
@@ -39,7 +39,7 @@ describe('Navbar Root', () => {
   });
 
   it('should render with default variant=primary', () => {
-    render(<Navbar.Root data-testid="navbar-root">navbar</Navbar.Root>);
+    render(<Navbar data-testid="navbar-root">navbar</Navbar>);
 
     const navbarRoot = screen.getByTestId('navbar-root');
 
@@ -48,9 +48,9 @@ describe('Navbar Root', () => {
 
   it('should render with provided variant=secondary', () => {
     render(
-      <Navbar.Root data-testid="navbar-root" variant="secondary">
+      <Navbar data-testid="navbar-root" variant="secondary">
         navbar
-      </Navbar.Root>,
+      </Navbar>,
     );
 
     const navbarRoot = screen.getByTestId('navbar-root');
@@ -59,7 +59,7 @@ describe('Navbar Root', () => {
   });
 
   it('should render with default size=md', () => {
-    render(<Navbar.Root data-testid="navbar-root">navbar</Navbar.Root>);
+    render(<Navbar data-testid="navbar-root">navbar</Navbar>);
 
     const navbarRoot = screen.getByTestId('navbar-root');
 
@@ -68,9 +68,9 @@ describe('Navbar Root', () => {
 
   it('should render with provided size=lg', () => {
     render(
-      <Navbar.Root data-testid="navbar-root" size="lg">
+      <Navbar data-testid="navbar-root" size="lg">
         navbar
-      </Navbar.Root>,
+      </Navbar>,
     );
 
     const navbarRoot = screen.getByTestId('navbar-root');
