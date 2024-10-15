@@ -34,6 +34,7 @@ jobs:
       - name: Install dependencies
         run: npm install && npm run build
 
+      # create release CHANGELOG
       - name: Create changelog
         id: changelog
         uses: TriPSs/conventional-changelog-action@v5
@@ -44,6 +45,7 @@ jobs:
           skip-ci: false
           skip-on-empty: false
 
+      # create release new tag
       - name: Create release
         uses: actions/create-release@v1
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
@@ -54,7 +56,8 @@ jobs:
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
 
+      # publish package to NPM after create release new version and tag
       - name: Publish on NPM
         run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.npm_auth_token }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
